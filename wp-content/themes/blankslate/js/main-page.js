@@ -51,22 +51,22 @@
     /* Surgery Results slider settings */
 
     var galleryCollection = [{
-      preview: './dist/images/recommends-page/slider1/video-cover1.jpg',
+      preview: 'wp-content/themes/blankslate/images/recommends-page/slider1/video-cover1.jpg',
       link: 'https://www.youtube.com/watch?v=sL-tCCRU0Mk'
     }, {
-      preview: './dist/images/recommends-page/slider1/video-cover2.jpg',
+      preview: 'wp-content/themes/blankslate/images/recommends-page/slider1/video-cover2.jpg',
       link: 'https://www.youtube.com/watch?v=IS7iW013dV8'
     }, {
-      preview: './dist/images/recommends-page/slider1/video-cover3.jpg',
+      preview: 'wp-content/themes/blankslate/images/recommends-page/slider1/video-cover3.jpg',
       link: 'https://www.youtube.com/watch?v=59ZDzzioKKg'
     }, {
-      preview: './dist/images/recommends-page/slider1/video-cover2.jpg',
+      preview: 'wp-content/themes/blankslate/images/recommends-page/slider1/video-cover2.jpg',
       link: 'https://www.youtube.com/watch?v=sL-tCCRU0Mk'
     }, {
-      preview: './dist/images/recommends-page/slider2/video-cover1.jpg',
+      preview: 'wp-content/themes/blankslate/images/recommends-page/slider2/video-cover1.jpg',
       link: 'https://www.youtube.com/watch?v=tqxMQS2LLhQ'
     }, {
-      preview: './dist/images/recommends-page/slider2/video-cover2.jpg',
+      preview: 'wp-content/themes/blankslate/images/recommends-page/slider2/video-cover2.jpg',
       link: 'https://www.youtube.com/watch?v=gVIdOSr2aGc'
     }];
     var galleryPreviewSettings = {

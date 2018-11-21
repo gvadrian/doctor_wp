@@ -4,25 +4,29 @@
  * Template Name: Home
  */
 
-get_header(); ?>
+get_header();
+$fields = get_fields();
+global $base;
+//pre($fields);die;
+?>
 <main>
     <section class="main-head">
         <div class="main-head__wrap">
-            <div class="main-head__bg" style="background-image: url('<?= get_template_directory_uri(); ?>/images/main-page/main-head_img.png');">
+            <div class="main-head__bg" style="background-image: url('<?= $fields['first_banner']['image'] ?>');">
                 <div class="main-head__mask"></div>
             </div>
             <div class="main-head__text-wrap">
                 <div class="main-head__text-block">
                     <div class="main-head__text-wrapper">
-                        <h1 class="main-head__h1">«МОЯ ПЛАСТИЧЕСКАЯ ХИРУРГИЯ - ЭТО ЕДИНСТВО ДУШИ И РАЗУМА»</h1>
-                        <h3 class="main-head__h3">Павел Денищук</h3>
+                        <h1 class="main-head__h1"><?= $fields['first_banner']['text'] ?></h1>
+                        <h3 class="main-head__h3"><?= $fields['first_banner']['sign'] ?></h3>
                     </div>
                 </div>
 
                 <div class="main-head__request">
                     <div class="main-head__request-wrap">
                         <div class="main-head__request-button request-button">
-                            <span>Записаться на прием</span>
+                            <span><?= $base['button_text_register_for_appointment'] ?></span>
                             <div class="main-head__request-line">
                                 <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      width="101px" height="9px" viewBox="0 0 101 9" enable-background="new 0 0 101 9" xml:space="preserve">
@@ -164,7 +168,7 @@ get_header(); ?>
             <div class="surgery-projects__text-block">
                 <div class="request-block">
                     <div class="request-button__light request-button">
-                        <span class="request-button__text request-button__text-light">Записаться на прием</span>
+                        <span class="request-button__text request-button__text-light"><?= $base['button_text_register_for_appointment'] ?></span>
                     </div>
                 </div>
                 <div class="surgery-projects__header">
@@ -291,7 +295,7 @@ get_header(); ?>
         </section>
         <div class="request-block">
             <div class="request-button__light request-button">
-                <span class="request-button__text request-button__text-light">Записаться на прием</span>
+                <span class="request-button__text request-button__text-light"><?= $base['button_text_register_for_appointment'] ?></span>
             </div>
         </div>
     </section>

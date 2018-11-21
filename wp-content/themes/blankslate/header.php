@@ -21,9 +21,8 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
 
 <head>
     <meta charset="utf-8">
-    <?php wp_title(); ?>
+    <title><?php wp_title(); ?></title>
     <base href="/">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -48,8 +47,8 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
 <header class="header">
     <div class="header__container">
         <div class="header__logo">
-            <a class="header__logo-link" href="<?= $current_lang_url; ?>">
-                <img class="header__img" src="<?= get_template_directory_uri(); ?>/images/DoctorDenLogo.png" alt="Doctor Den" />
+            <a class="header__logo-link" href="<?= $current_lang_url ?>">
+                <img class="header__img" src="<?= get_template_directory_uri() ?>/images/DoctorDenLogo.png" alt="Doctor Den" />
             </a>
         </div>
 
@@ -145,12 +144,12 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
             </div>
             <div class="header__phone">
                 <a class="header__phone-link" href="tel:+38 (044) 483 21 78">
-                    +38 (044) 483 21 78
+                    <?= $base['header_phones'][0]['phone'] ?>
                 </a>
             </div>
             <div id="header-request-btn" class="header__request-wrap">
                 <a class="header__request-button request-button">
-                    записаться на прием
+                    <?= $base['button_text_register_for_appointment'] ?>
                 </a>
             </div>
         </div>
@@ -161,17 +160,17 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                 <?php foreach ($base['menu'] as $menu_item) : ?>
                     <?php if ($menu_item['acf_fc_layout'] == 'standard') : ?>
                         <li class="header__nav-item">
-                            <a class="header__nav-link" href="<?= empty($menu_item['link']) ? "#" : $menu_item['link']; ?>">
-                                <?php echo $menu_item['text']; ?>
+                            <a class="header__nav-link" href="<?= empty($menu_item['link']) ? "#" : $menu_item['link'] ?>">
+                                <?= $menu_item['text'] ?>
                             </a>
                         </li>
                     <?php else: ?>
                         <li class="sub-menu header__nav-item">
-                            <a class="header__nav-link sub-header">школа денищука</a>
+                            <a class="header__nav-link sub-header"><?= $menu_item['text']; ?></a>
                             <div class="sub-links menu__sub-links">
                                 <?php foreach ($menu_item['items'] as $submenu_item) : ?>
-                                    <a class="nav-link header__nav-link" href="<?php echo $submenu_item['link']; ?>">
-                                        <?php echo $submenu_item['text']; ?>
+                                    <a class="nav-link header__nav-link" href="<?= $submenu_item['link'] ?>">
+                                        <?= $submenu_item['text'] ?>
                                     </a>
                                 <?php endforeach; ?>
                             </div>
@@ -244,31 +243,26 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
         </div>
         <nav class="mobile-menu__nav">
             <ul class="mobile-menu__nav-list">
-                <li class="mobile-menu__nav-item">
-                    <a class="mobile-menu__nav-link" href="./about-page.html">о хирурге</a>
-                </li>
-                <li class="mobile-menu__nav-item">
-                    <a class="mobile-menu__nav-link" href="./before-after-page.html">до/после</a>
-                </li>
-                <li class="mobile-menu__nav-item">
-                    <a class="mobile-menu__nav-link" href="./recommends-page.html">рекомендации</a>
-                </li>
-                <li class="mobile-menu__nav-item">
-                    <a class="mobile-menu__nav-link" href="./patient-stories.html">отзывы</a>
-                </li>
-                <li class="mobile-menu__sub-menu">
-                    <a class="sub-header mobile-menu__nav-link">школа денищука</a>
-                    <div class="mobile-menu__sub-link">
-                        <a class="nav-link mobile-menu__nav-link" href="./school.html">школа пластической хирургии</a>
-                        <a class="nav-link mobile-menu__nav-link" href="./icamps.html">ICAMPS</a>
-                    </div>
-                </li>
-                <li class="mobile-menu__nav-item">
-                    <a class="mobile-menu__nav-link" href="./news.html">эксперт в сми</a>
-                </li>
-                <li class="mobile-menu__nav-item">
-                    <a class="mobile-menu__nav-link" href="./contacts.html">контакты</a>
-                </li>
+                <?php foreach ($base['menu'] as $menu_item) : ?>
+                    <?php if ($menu_item['acf_fc_layout'] == 'standard') : ?>
+                        <li class="mobile-menu__nav-item">
+                            <a class="mobile-menu__nav-link" href="<?= empty($menu_item['link']) ? "#" : $menu_item['link'] ?>">
+                                <?= $menu_item['text'] ?>
+                            </a>
+                        </li>
+                    <?php else: ?>
+                        <li class="mobile-menu__sub-menu">
+                            <a class="sub-header mobile-menu__nav-link"><?= $menu_item['text'] ?></a>
+                            <div class="mobile-menu__sub-link">
+                                <?php foreach ($menu_item['items'] as $submenu_item) : ?>
+                                    <a class="nav-link mobile-menu__nav-link" href="<?= $submenu_item['link']; ?>">
+                                        <?= $submenu_item['text']; ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </ul>
         </nav>
         <div class="mobile-menu__phone">

@@ -124,32 +124,32 @@ body {
 
 @font-face {
   font-family: "firasans-regular";
-  src: url("../../assets/fonts/firasans-regular.eot");
-  src: url("../../assets/fonts/firasans-regular.woff") format("woff"), url("../../assets/fonts/firasans-regular.ttf") format("truetype");
+  src: url("../fonts/firasans-regular.eot");
+  src: url("../fonts/firasans-regular.woff") format("woff"), url("../fonts/firasans-regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "firasans-light";
-  src: url("../../assets/fonts/firasans-light.eot");
-  src: url("../../assets/fonts/firasans-light.woff") format("woff"), url("../../assets/fonts/firasans-light.ttf") format("truetype");
+  src: url("../fonts/firasans-light.eot");
+  src: url("../fonts/firasans-light.woff") format("woff"), url("../fonts/firasans-light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "firasans-lightitalic";
-  src: url("../../assets/fonts/firasans-lightitalic.eot");
-  src: url("../../assets/fonts/firasans-lightitalic.woff") format("woff"), url("../../assets/fonts/firasans-lightitalic.ttf") format("truetype");
+  src: url("../fonts/firasans-lightitalic.eot");
+  src: url("../fonts/firasans-lightitalic.woff") format("woff"), url("../fonts/firasans-lightitalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: "firasans-medium";
-  src: url("../../assets/fonts/firasans-medium.eot");
-  src: url("../../assets/fonts/firasans-medium.woff") format("woff"), url("../../assets/fonts/firasans-medium.ttf") format("truetype");
+  src: url("../fonts/firasans-medium.eot");
+  src: url("../fonts/firasans-medium.woff") format("woff"), url("../fonts/firasans-medium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

@@ -171,7 +171,7 @@ get_header(); ?>
                     </div>
                     <div class="request-block">
                         <div class="request-button__light request-button">
-                            <span class="request-button__text request-button__text-light">Записаться на прием</span>
+                            <span class="request-button__text request-button__text-light"><?= $base['button_text_register_for_appointment'] ?></span>
                         </div>
                     </div>
                 </div>

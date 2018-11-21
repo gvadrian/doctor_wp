@@ -4,17 +4,14 @@
 
     <div class="footer__width">
         <div class="footer__link-group1">
-            <a href="./about-page.html" class="footer__link-group1_item">О хирурге</a>
-            <a href="./before-after-page.html" class="footer__link-group1_item">До/после</a>
-            <a href="./recommends-page.html" class="footer__link-group1_item">Рекомендации</a>
-            <a href="./patient-stories.html" class="footer__link-group1_item">Отзывы</a>
-            <a href="./school.html" class="footer__link-group1_item">Персональное обучение</a>
+            <?php foreach (array_slice($base['menu_footer'], 0, ceil(count($base['menu_footer'])/2)) as $menu_item) : ?>
+                <a href="<?= $menu_item['link'] ?>" class="footer__link-group1_item"><?= $menu_item['text'] ?></a>
+            <?php endforeach; ?>
         </div>
         <div class="footer__link-group2">
-            <a href="./school.html" class="footer__link-group2_item-school">Школа пластической хирургии</a>
-            <a href="./news.html" class="footer__link-group2_item">Эксперт в СМИ</a>
-            <a href="./icamps.html" class="footer__link-group2_item">ICAMPS</a>
-            <a href="./contacts.html" class="footer__link-group2_item">Контакты</a>
+            <?php foreach (array_slice($base['menu_footer'], ceil(count($base['menu_footer'])/2)) as $menu_item) : ?>
+                <a href="<?= $menu_item['link'] ?>" class="footer__link-group2_item-school"><?= $menu_item['text'] ?></a>
+            <?php endforeach; ?>
         </div>
         <div class="footer__contact">
             <a href="tel:+38 (044) 483 21 78" class="footer__contact_item">+38 (044) 4832178</a>
@@ -44,7 +41,7 @@
             </a>
         </div>
         <div class="footer__request-button">
-            <a class="footer__request-link">Записаться на прием</a>
+            <a class="footer__request-link"><?= $base['button_text_register_for_appointment'] ?></a>
         </div>
         <div class="footer__links-societies">
             <a href="https://www.breastsurgeons.org" target="_blank">

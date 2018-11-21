@@ -614,7 +614,7 @@ get_header(); ?>
                     </div>
                     <div class="request-block news-about__btn school_btn">
                         <div class="request-button__dark request-button">
-                            <span class="request-button__text request-button__text-dark">Записаться на прием</span>
+                            <span class="request-button__text request-button__text-dark"><?= $base['button_text_register_for_appointment'] ?></span>
                         </div>
                     </div>
                 </div>
