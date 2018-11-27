@@ -28,24 +28,22 @@ function load_scripts()
         wp_enqueue_script('main-page', get_template_directory_uri() . '/js/main-page.min.js', array(), false, true);
     if (strpos($_SERVER['REQUEST_URI'], '/about/') !== false)
         wp_enqueue_script('about-page', get_template_directory_uri() . '/js/about-page.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/before-after/'))
+    if (strpos($_SERVER['REQUEST_URI'], '/before-after/') !== false)
         wp_enqueue_script('before-after-page', get_template_directory_uri() . '/js/before-after-page.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/recommendations/')) {
+    if (strpos($_SERVER['REQUEST_URI'], '/recommendations/') !== false) {
         wp_enqueue_script('recommendations-page', get_template_directory_uri() . '/js/recommends-page.min.js', array(), false, true);
         wp_enqueue_style('recommendations-slick-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css');
     }
-    if (strpos($_SERVER['REQUEST_URI'], '/reviews/'))
+    if (strpos($_SERVER['REQUEST_URI'], '/reviews/') !== false)
         wp_enqueue_script('reviews-page', get_template_directory_uri() . '/js/patient-stories.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/school/'))
+    if (strpos($_SERVER['REQUEST_URI'], '/school/') !== false)
         wp_enqueue_script('school-page', get_template_directory_uri() . '/js/school-page.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/icamps/'))
+    if (strpos($_SERVER['REQUEST_URI'], '/icamps/') !== false)
         wp_enqueue_script('icamps-page', get_template_directory_uri() . '/js/icamps-page.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/smi/'))
+    if (strpos($_SERVER['REQUEST_URI'], '/smi/') !== false)
         wp_enqueue_script('smi-page', get_template_directory_uri() . '/js/news-about.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/school/'))
+    if (strpos($_SERVER['REQUEST_URI'], '/school/') !== false)
         wp_enqueue_script('school-page', get_template_directory_uri() . '/js/school-page.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/contacts/'))
-        wp_enqueue_script('google-maps-init', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBYLC1KTRLWzjrBWIXUL9F0TYI9VGUH2ZU&callback=initMap', array(), false, true);
 
 
 
@@ -84,15 +82,15 @@ function get_reviews($post_id)
     $reviews = get_posts($args);
     foreach ($reviews as $review) :
         $fields = get_fields($review);
-        ?>
+       ?>
         <div class="testimonials__item">
             <div class="testimonials__photo">
-                <img src="<?php echo $fields['reviewer_photo']['url']; ?>"
-                     alt="<?php echo $fields['reviewer_photo']['alt']; ?>">
+                <img src="<?php echo $fields['reviewer_photo']['url'];?>"
+                     alt="<?php echo $fields['reviewer_photo']['alt'];?>">
             </div>
             <div class="testimonials__description">
-                <h3 class="testimonials__name"><?php echo $fields['reviewer_name']; ?></h3>
-                <h4 class="testimonials__text"><?php echo $fields['review_text']; ?></h4>
+                <h3 class="testimonials__name"><?php echo $fields['reviewer_name'];?></h3>
+                <h4 class="testimonials__text"><?php echo $fields['review_text'];?></h4>
             </div>
         </div>
     <?
@@ -114,42 +112,42 @@ function news_tag_switch()
     ];
     $news = get_posts($args_news);
     ob_start();
-    ?>
+   ?>
     <div class="news-page__container">
         <?php
         global $base;
         $i = $p = 0;
         $page_capacity = $base['pagination_amount'];
         $page_amount = ceil(count($news) / $page_capacity);
-        ?>
+       ?>
         <?php foreach ($news as $issue_object) :
             $issue = get_fields($issue_object->ID);
             $news_ids[] = $issue_object->ID;
             $p = (($i % $page_capacity) === 0) ? $p + 1 : $p;
             $i++;
-            ?>
-            <div class="news-page__element" data-page="<?php echo $p; ?>">
+           ?>
+            <div class="news-page__element" data-page="<?php echo $p;?>">
                 <div class="news-page__image">
-                    <a href="<?php echo get_permalink($issue_object); ?>">
-                        <img src="<?php echo $issue['image']['url']; ?>" alt="<?php echo $issue['image']['alt']; ?>">
+                    <a href="<?php echo get_permalink($issue_object);?>">
+                        <img src="<?php echo $issue['image']['url'];?>" alt="<?php echo $issue['image']['alt'];?>">
                     </a>
                 </div>
                 <div class="news-page__description">
-                    <a href="<?php echo get_permalink($issue_object); ?>">
-                        <h3 class="news-page__title"><?php echo $issue['title']; ?></h3>
+                    <a href="<?php echo get_permalink($issue_object);?>">
+                        <h3 class="news-page__title"><?php echo $issue['title'];?></h3>
                     </a>
 
                     <p class="news-page__text">
-                        <?php echo $issue['short_desc']; ?>
+                        <?php echo $issue['short_desc'];?>
                     </p>
                     <div class="btn-wrap">
-                        <a href="<?php echo get_permalink($issue_object); ?>" class="btn btn_small">Подробнее</a>
+                        <a href="<?php echo get_permalink($issue_object);?>" class="btn btn_small">Подробнее</a>
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+        <?php endforeach;?>
     </div>
-    <?php if ($page_amount > 1) { ?>
+    <?php if ($page_amount > 1) {?>
     <div class="pagination">
         <ul class="pagination__list text-center" id="pagination">
             <li class="pagination__item">
@@ -180,12 +178,12 @@ function news_tag_switch()
                 <a data-pagelink="1"
                    class="pagination__link pagination__link_active">1</a>
             </li>
-            <?php for ($i = 2; $i <= $page_amount; $i++) : ?>
+            <?php for ($i = 2; $i <= $page_amount; $i++) :?>
                 <li class="pagination__item">
-                    <a data-pagelink="<?php echo $i; ?>"
-                       class="pagination__link"><?php echo $i; ?></a>
+                    <a data-pagelink="<?php echo $i;?>"
+                       class="pagination__link"><?php echo $i;?></a>
                 </li>
-            <?php endfor; ?>
+            <?php endfor;?>
             <li class="pagination__item">
                 <a class="pagination__link pagin_right">
                     <div class="pagination__arrow pagination__arrow_right">
@@ -415,7 +413,7 @@ function admin_styles(){
 }
 add_action('admin_enqueue_scripts', 'admin_styles');
 
-if ($_GET['post_type'] == 'page') : ?>
+if ($_GET['post_type'] == 'page') :?>
     <style>
         .trash, .clone, .edit_as_new_draft { display: none !important; }
     </style>

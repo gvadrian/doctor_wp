@@ -4,7 +4,7 @@
  * Template Name: Before/After
  */
 
-get_header(); ?>
+get_header();?>
 <main>
     <section class="before-after__wrap">
 
@@ -83,9 +83,9 @@ get_header(); ?>
 
         <div class="request-block">
             <div class="request-button__dark request-button">
-                <span class="request-button__text request-button__text-dark"><?= $base['button_text_register_for_appointment'] ?></span>
+                <span class="request-button__text request-button__text-dark"><?=$base['button_text_register_for_appointment']?></span>
             </div>
         </div>
     </section>
 </main>
-<?php get_footer(); ?>
+<?php get_footer();?>

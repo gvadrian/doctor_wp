@@ -4,7 +4,7 @@
  * Template Name: ICamps
  */
 
-get_header(); ?>
+get_header();?>
 <main>
     <div class="icamps-page__wrap">
         <section class="icamps-head__wrap">
@@ -171,7 +171,7 @@ get_header(); ?>
                     </div>
                     <div class="request-block">
                         <div class="request-button__light request-button">
-                            <span class="request-button__text request-button__text-light"><?= $base['button_text_register_for_appointment'] ?></span>
+                            <span class="request-button__text request-button__text-light"><?=$base['button_text_register_for_appointment']?></span>
                         </div>
                     </div>
                 </div>
@@ -179,4 +179,4 @@ get_header(); ?>
         </section>
     </div>
 </main>
-<?php get_footer(); ?>
+<?php get_footer();?>

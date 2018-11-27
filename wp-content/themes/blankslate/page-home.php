@@ -11,21 +11,21 @@ global $base;
 <main>
     <section class="main-head">
         <div class="main-head__wrap">
-            <div class="main-head__bg" style="background-image: url('<?= $fields['first_block']['image'] ?>');">
+            <div class="main-head__bg" style="background-image: url('<?=$fields['first_block']['image']?>');">
                 <div class="main-head__mask"></div>
             </div>
             <div class="main-head__text-wrap">
                 <div class="main-head__text-block">
                     <div class="main-head__text-wrapper">
-                        <h1 class="main-head__h1"><?= $fields['first_block']['text'] ?></h1>
-                        <h3 class="main-head__h3"><?= $fields['first_block']['sign'] ?></h3>
+                        <h1 class="main-head__h1"><?=$fields['first_block']['text']?></h1>
+                        <h3 class="main-head__h3"><?=$fields['first_block']['sign']?></h3>
                     </div>
                 </div>
 
                 <div class="main-head__request">
                     <div class="main-head__request-wrap">
                         <div class="main-head__request-button request-button">
-                            <span><?= $base['button_text_register_for_appointment'] ?></span>
+                            <span><?=$base['button_text_register_for_appointment']?></span>
                             <div class="main-head__request-line">
                                 <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                      width="101px" height="9px" viewBox="0 0 101 9" enable-background="new 0 0 101 9" xml:space="preserve">
@@ -66,7 +66,7 @@ global $base;
     </section>
     <section class="main-about">
         <div class="main-about__wrap">
-            <div id="main-about-video" class="main-about__video" style="background-image: url('<?= get_template_directory_uri(); ?>/images/about-page/video_poster.jpg')">
+            <div id="main-about-video" class="main-about__video" style="background-image: url('<?=get_template_directory_uri();?>/images/about-page/video_poster.jpg')">
                 <a class="inlinePlayButton" href="https://www.youtube.com/watch?v=<?=$fields['second_block']['video_code']?>"></a>
             </div>
         </div>
@@ -109,32 +109,32 @@ global $base;
                     </div>
                     <div class="surgery-results__list">
                         <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" href="./procedure-page.html" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/nose.jpg')">
+                            <a href="./procedure-page.html" class="surgery-results__link" href="./procedure-page.html" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/nose.jpg')">
                                 <span class="surgery-results__link-text">Нос</span>
                             </a>
                         </div>
                         <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/breast.jpg')">
+                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/breast.jpg')">
                                 <span class="surgery-results__link-text">Грудь</span>
                             </a>
                         </div>
                         <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/body.jpg')">
+                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/body.jpg')">
                                 <span class="surgery-results__link-text">Тело</span>
                             </a>
                         </div>
                         <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/face.jpg')">
+                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/face.jpg')">
                                 <span class="surgery-results__link-text">Лицо</span>
                             </a>
                         </div>
                         <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/aesthetic_medicine.jpg')">
+                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/aesthetic_medicine.jpg')">
                                 <span class="surgery-results__link-text">Эстетическая медицина</span>
                             </a>
                         </div>
                         <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/intimate_plastic.jpg')">
+                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/intimate_plastic.jpg')">
                                 <span class="surgery-results__link-text">Интимная пластика</span>
                             </a>
                         </div>
@@ -144,13 +144,13 @@ global $base;
                     <div class="surgery-results__wrap-slider">
                         <div id="surgeryResultsSliderMain" class="surgery-results__slider">
                             <div class="surgery-results__slider-item">
-                                <div class="surgery-results__img" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/img2.jpg')"></div>
+                                <div class="surgery-results__img" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/img2.jpg')"></div>
                             </div>
                             <div class="surgery-results__slider-item">
-                                <div class="surgery-results__img" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/img1.jpg')"></div>
+                                <div class="surgery-results__img" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/img1.jpg')"></div>
                             </div>
                             <div class="surgery-results__slider-item">
-                                <div class="surgery-results__img" style="background-image: url('<?= get_template_directory_uri(); ?>/images/surgery-results/img3.jpg')"></div>
+                                <div class="surgery-results__img" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/img3.jpg')"></div>
                             </div>
                         </div>
                     </div>
@@ -161,7 +161,7 @@ global $base;
             <div class="surgery-projects__text-block">
                 <div class="request-block">
                     <div class="request-button__light request-button">
-                        <span class="request-button__text request-button__text-light"><?= $base['button_text_register_for_appointment'] ?></span>
+                        <span class="request-button__text request-button__text-light"><?=$base['button_text_register_for_appointment']?></span>
                     </div>
                 </div>
                 <div class="surgery-projects__header">
@@ -173,13 +173,13 @@ global $base;
                 </div>
             </div>
             <div class="surgery-projects__gallery">
-                <?php foreach ($fields['fourth_block']['tiles'] as $tile) : ?>
+                <?php foreach ($fields['fourth_block']['tiles'] as $tile) :?>
                     <a href="<?=$tile['link']?>" style="background-image: url('<?=$tile['image']['url']?>')"
                         <?=($tile['target_blank'] == 1) ? 'target="_blank"' : ''?>
                        class="surgery-projects__gallery-link">
                         <div class="surgery-projects__gallery-text"><?=$tile['text']?></div>
                     </a>
-                <?php endforeach; ?>
+                <?php endforeach;?>
             </div>
 
         </section>
@@ -200,42 +200,42 @@ global $base;
                     <div id="expertSmmSliderMain" class="expert-smm__slider slick-slider">
                         <div class="expert-smi__slider-item">
                             <a href="https://1plus1.ua" target="_blank" class="expert-smi__link-wrap">
-                                <img src="<?= get_template_directory_uri(); ?>/images/smm-expert/1_plus_1_logo.png">
+                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/1_plus_1_logo.png">
                             </a>
                         </div>
                         <div class="expert-smi__slider-item">
                             <a href="https://www.unian.ua" target="_blank" class="expert-smi__link-wrap">
-                                <img src="<?= get_template_directory_uri(); ?>/images/smm-expert/unian-logo.png">
+                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/unian-logo.png">
                             </a>
                         </div>
                         <div class="expert-smi__slider-item">
                             <a href="http://www.channel5.com" target="_blank" class="expert-smi__link-wrap">
-                                <img src="<?= get_template_directory_uri(); ?>/images/smm-expert/logo_5_channel.png">
+                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/logo_5_channel.png">
                             </a>
                         </div>
                         <div class="expert-smi__slider-item">
                             <a href="https://ain.ua" class="expert-smi__link-wrap">
-                                <img src="<?= get_template_directory_uri(); ?>/images/smm-expert/ain-logo.png">
+                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/ain-logo.png">
                             </a>
                         </div>
                         <div class="expert-smi__slider-item">
                             <a href="https://1plus1.ua" class="expert-smi__link-wrap">
-                                <img src="<?= get_template_directory_uri(); ?>/images/smm-expert/1_plus_1_logo.png">
+                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/1_plus_1_logo.png">
                             </a>
                         </div>
                         <div class="expert-smi__slider-item">
                             <a href="https://www.unian.ua" class="expert-smi__link-wrap">
-                                <img src="<?= get_template_directory_uri(); ?>/images/smm-expert/unian-logo.png">
+                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/unian-logo.png">
                             </a>
                         </div>
                         <div class="expert-smi__slider-item">
                             <a href="http://www.channel5.com" class="expert-smi__link-wrap">
-                                <img src="<?= get_template_directory_uri(); ?>/images/smm-expert/logo_5_channel.png">
+                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/logo_5_channel.png">
                             </a>
                         </div>
                         <div class="expert-smi__slider-item">
                             <a href="https://ain.ua" class="expert-smi__link-wrap">
-                                <img src="<?= get_template_directory_uri(); ?>/images/smm-expert/ain-logo.png">
+                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/ain-logo.png">
                             </a>
                         </div>
                     </div>
@@ -282,9 +282,9 @@ global $base;
         </section>
         <div class="request-block">
             <div class="request-button__light request-button">
-                <span class="request-button__text request-button__text-light"><?= $base['button_text_register_for_appointment'] ?></span>
+                <span class="request-button__text request-button__text-light"><?=$base['button_text_register_for_appointment']?></span>
             </div>
         </div>
     </section>
 </main>
-<?php get_footer(); ?>
+<?php get_footer();?>

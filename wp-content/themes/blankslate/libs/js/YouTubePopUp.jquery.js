@@ -1,19 +1,13 @@
 
 (function ( $ ) {
- 
+
     $.fn.YouTubePopUp = function(options) {
 
         var YouTubePopUpOptions = $.extend({
-                autoplay: 1
+            autoplay: 1
         }, options );
 
         $(this).on('click', function (e) {
-
-            $('body').bind('scroll mousewheel touchmove', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                return false;
-          });
 
             var youtubeLink = $(this).attr("href");
 
@@ -53,10 +47,7 @@
             }
 
             $(".YouTubePopUp-Wrap, .YouTubePopUp-Close").click(function(){
-                $(".YouTubePopUp-Wrap").addClass("YouTubePopUp-Hide").delay(515).queue(function() { $(this).remove(); 
-                // $('body').unbind('scroll mousewheel touchmove');
-                
-                // });
+                $(".YouTubePopUp-Wrap").addClass("YouTubePopUp-Hide").delay(515).queue(function() { $(this).remove(); });
             });
 
             e.preventDefault();
@@ -67,14 +58,10 @@
 
             if ( e.keyCode == 27 ){
                 $('.YouTubePopUp-Wrap, .YouTubePopUp-Close').click();
-
-                // unable scroll back
-                // $('body').unbind('scroll mousewheel touchmove');
-                
             }
 
         });
 
     };
- 
+
 }( jQuery ));

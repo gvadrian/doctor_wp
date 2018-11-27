@@ -1,11 +1,19 @@
 <?php
 
 /**
- * Template Name: SMI
+ * Template Name: smi
  */
 
-get_header(); ?>
-<main class="news__about">
+get_header();
+global $base;
+$fields = get_fields();
+$args_news = [
+    'post_type' => 'smi',
+    'numberposts' => 0,
+];
+$news = get_posts($args_news);
+?>
+<main class="news__main">
     <div class="lines">
         <div class="lines__list">
             <div class="lines__item"></div>
@@ -16,64 +24,42 @@ get_header(); ?>
             <div class="tab-none lines__item"></div>
         </div>
     </div>
-    <div class="news-about__wrap">
-        <section class="news-about__video">
-            <div class="news-about__video-inner">
-                <div class="news-about__headline">
-                    <div class="news-about__head-wrap">
-                        <div class="news-about__second">
-                            <div class="icon__back" onclick="history.back()">
-                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                     width="10px" height="18px" viewBox="0 0 10 18" enable-background="new 0 0 10 18" xml:space="preserve">
-                                    <g id="Mobile" opacity="0.4">
-                                        <g id="Service_info_Mobile" transform="translate(-20.000000, -100.000000)">
-                                            <g id="Service_info" transform="translate(-389.000000, 60.000000)">
-                                                <g id="h1" transform="translate(409.000000, 21.000000)">
-                                                    <path id="Shape" opacity="0.4" fill="#FFFFFF" d="M8.875,36.814C9.003,36.938,9.164,37,9.341,37
-                                                               c0.177,0,0.338-0.062,0.466-0.186c0.257-0.248,0.257-0.652,0-0.9L1.608,28l8.199-7.914c0.257-0.248,0.257-0.652,0-0.9
-                                                               c-0.257-0.248-0.675-0.248-0.932,0L0.193,27.55c-0.257,0.248-0.257,0.652,0,0.9L8.875,36.814z"
-                                                    />
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                            <h2 class="news-about__second-text">Павел Денищук на 1+1 о пластических операциях Роксоланы из Великолепного Века</h2>
-                        </div>
-                        <div>
-                            <span class="news-about__second-date">17.10.18</span>
+
+    <section class="news__wrap">
+        <div class="news__head">
+            <h2 class="news__head-text"><?=$fields['title']?></h2>
+            <div class="news__head-text_flo pointer__wrap">
+                <div class="pointer__square-dark">
+                </div>
+            </div>
+        </div>
+        <div class="news__list">
+            <?php foreach ($news as $item) : ?>
+            <?php $news_fields = get_fields($item->ID); ?>
+            <div class="news__item">
+                <div class="news__img-block">
+                    <img class="news__img" src="<?=$news_fields['list_image']['url']?>" alt="" />
+                    <div class="news__img-mask"></div>
+                </div>
+                <div class="news__item-inner">
+                    <div class="news__text">
+                        <h2 class="news__text-headline about-surgeon__h2"><?=$news_fields['title']?></h2>
+                        <?=$news_fields['content']?>
+                    </div>
+                    <div class="news_btn more">
+                        <div class="news_btn_about more__btn">
+                            <a class="news_btn_about-link more__link" href="<?=get_permalink($item)?>"><?=$base['button_detail_text_2']?></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="news-about__play">
-                <div class="news-about__player" style="background-image: url('/dist/images/news_img/news_beauty-face.jpg')">
-                    <div class="news-about__player-poster">
-                        <a href="https://www.youtube.com/watch?v=mKQMhA9dhF0" class="news-about__player-poster-ren"></a>
-                    </div>
-                </div>
-                <!-- <section class="about-page__img-section">
-
-                            <div class="about-page__width about-page__img-section_img">
-                                <a class="inlinePlayButton"></a>
-                            </div>
-
-                        </section> -->
-                <div class="news-about__play-text">
-                    <p> Мерьем Узерли, актриса, которая сыграла главную героиню турецкого сериала "Великолепный век" Роксолану,
-                        изменилась до неузнаваемости! Что же сделала актриса со своей внешностью, интересует миллионы
-                        ее поклонников. Чтобы ответить на этот вопрос команда 1+1 обратилась к одному из ведущих пластических
-                        хирургов с 30-летним опытом, Павлу Денищуку. В своем интервью доктор рассказал, какие пластические
-                        операции сделала Мерьем Узерли.</p>
-                </div>
+            <?php endforeach ?>
+        </div>
+        <div class="request-block">
+            <div class="request-button__dark request-button">
+                <span class="request-button__text request-button__text-dark"><?=$base['button_text_register_for_appointment']?></span>
             </div>
-            <div class="request-block news-about__btn">
-                <div class="request-button__dark request-button">
-                    <span class="request-button__text request-button__text-dark"><?= $base['button_text_register_for_appointment'] ?></span>
-                </div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
 </main>
-<?php get_footer(); ?>
+<?php get_footer();?>

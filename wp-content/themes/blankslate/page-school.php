@@ -4,7 +4,7 @@
  * Template Name: School
  */
 
-get_header(); ?>
+get_header();?>
 <main>
     <section class="main-head__school main-head">
         <div class="school-head__wrap main-head__wrap">
@@ -614,7 +614,7 @@ get_header(); ?>
                     </div>
                     <div class="request-block news-about__btn school_btn">
                         <div class="request-button__dark request-button">
-                            <span class="request-button__text request-button__text-dark"><?= $base['button_text_register_for_appointment'] ?></span>
+                            <span class="request-button__text request-button__text-dark"><?=$base['button_text_register_for_appointment']?></span>
                         </div>
                     </div>
                 </div>
@@ -623,4 +623,4 @@ get_header(); ?>
 
     </section>
 </main>
-<?php get_footer(); ?>
+<?php get_footer();?>

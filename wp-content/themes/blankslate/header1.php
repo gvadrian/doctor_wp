@@ -1,4 +1,4 @@
-<?php global $base, $current_lang_url; ?>
+<?php global $base, $current_lang_url;?>
 
 <?php
 $langs = array('ru', 'en', 'uk');
@@ -16,23 +16,23 @@ if ($current_lang) {
 $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $current_lang : 'ru';
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes();?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <title><?php wp_title(); ?></title> -->
+    <!-- <title><?php wp_title();?></title> -->
     <meta name="google-site-verification" content="rGQPKa_a0zRYy7NMuoD2-r2jZyjorEGeKpQOwLDkO0Y" />
     <meta name="yandex-verification" content="9e50d0c673d5a253" />
     <meta name='wmail-verification' content='d962433a8e4e3febf851f505b10924eb' />
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png" type="image/png">
-    <?php wp_head(); ?>
-    <?php if ("en" == $current_lang): ?>
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/images/favicon.png" type="image/png">
+    <?php wp_head();?>
+    <?php if ("en" == $current_lang):?>
         <style>.header .header__menu li:hover>a, .header .header__menu li>a:hover, .header__menu__link{font-family: Arial;}</style>
-    <?php endif; ?>
+    <?php endif;?>
 
-    <script type="application/ld+json"><?= ldJsBreadcrumbs();?></script>
+    <script type="application/ld+json"><?=ldJsBreadcrumbs();?></script>
 
     <script type="text/javascript">
         function preventSelection(element){
@@ -125,25 +125,25 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K797KZD"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<div class="page page-<?php echo $page_class; ?>">
+<div class="page page-<?php echo $page_class;?>">
     <header class="header">
         <div class="header__above-header">
             <div class="header__logo">
-                <a href="<?php echo $current_lang_url; ?>" class="header__logo-link">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo/logo-<?php echo $logo_lang; ?>.png" alt="logo">
+                <a href="<?php echo $current_lang_url;?>" class="header__logo-link">
+                    <img src="<?php echo get_template_directory_uri();?>/images/logo/logo-<?php echo $logo_lang;?>.png" alt="logo">
                 </a>
             </div>
             <div class="header__number">
-                <?php foreach ($base['header_phones'] as $phone) : ?>
-                    <a href="tel:+<?php echo preg_replace("/\D/", "", $base['phone']); ?>"
-                       class="header__number__item"><?php echo $phone['phone']; ?></a>
-                    <?php break; endforeach; ?>
-                <span class="header__schedule__item"><?php echo $base['schedule']; ?></span>
+                <?php foreach ($base['header_phones'] as $phone) :?>
+                    <a href="tel:+<?php echo preg_replace("/\D/", "", $base['phone']);?>"
+                       class="header__number__item"><?php echo $phone['phone'];?></a>
+                    <?php break; endforeach;?>
+                <span class="header__schedule__item"><?php echo $base['schedule'];?></span>
             </div>
             <div class="header__above-info">
 
                 <div class="social social_header">
-                    <a href="<?php echo $base['facebook']; ?>" class="social__link social__link_fb" target="_blank">
+                    <a href="<?php echo $base['facebook'];?>" class="social__link social__link_fb" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                              y="0px"
                              viewBox="0 0 21 21" style="enable-background:new 0 0 21 21;" xml:space="preserve">
@@ -151,7 +151,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                              c-1.3,0-2,1.1-2,2v2h4l-0.6,3H14v8l5.8,0c0.6,0,1.2-0.5,1.2-1.2V1.2C21,0.5,20.5,0,19.8,0z"/>
                         </svg>
                     </a>
-                    <a href="<?php echo $base['youtube']; ?>" class="social__link social__link_youtube" target="_blank">
+                    <a href="<?php echo $base['youtube'];?>" class="social__link social__link_youtube" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                              y="0px"
                              viewBox="0 0 28 20" style="enable-background:new 0 0 28 20;" xml:space="preserve">
@@ -166,15 +166,15 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                         </svg>
                     </a>
                 </div>
-                <button class="btnConsultation btn btn_header"><?php echo $base['form_button_text_1']; ?></button>
+                <button class="btnConsultation btn btn_header"><?php echo $base['form_button_text_1'];?></button>
                 <div class="header__language">
                     <div class="header__language_hamburger-menu">
-                        <?php foreach ($langs as $lang) : ?>
-                            <div class="header__language_item <?php echo ($lang == $_GET['lang']) ? 'header__language_item-active' : ''; ?>">
-                                <a href="<?php echo ($lang != $_GET['lang']) ? lang_link($lang) : 'javascript:void(0);'; ?>"
-                                   class="header__language_link"><?php echo $lang; ?></a>
+                        <?php foreach ($langs as $lang) :?>
+                            <div class="header__language_item <?php echo ($lang == $_GET['lang']) ? 'header__language_item-active' : '';?>">
+                                <a href="<?php echo ($lang != $_GET['lang']) ? lang_link($lang) : 'javascript:void(0);';?>"
+                                   class="header__language_link"><?php echo $lang;?></a>
                             </div>
-                        <?php endforeach; ?>
+                        <?php endforeach;?>
                     </div>
                 </div>
                 <button class="header__button-menu"><span></span></button>
@@ -184,30 +184,30 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
         <div class="header__main-nav">
             <nav class="header__nav">
                 <ul class="header__menu">
-                    <?php foreach ($base['menu'] as $menu_item) : ?>
-                        <?php if ($menu_item['acf_fc_layout'] == 'standard') : ?>
-                            <li class="header__menu__item"><a href="<?= empty($menu_item['link']) ? "#" : $menu_item['link']; ?>"
-                                                              class="header__menu__link"><?php echo $menu_item['text']; ?></a>
+                    <?php foreach ($base['menu'] as $menu_item) :?>
+                        <?php if ($menu_item['acf_fc_layout'] == 'standard') :?>
+                            <li class="header__menu__item"><a href="<?=empty($menu_item['link']) ? "#" : $menu_item['link'];?>"
+                                                              class="header__menu__link"><?php echo $menu_item['text'];?></a>
                             </li>
-                        <?php else: ?>
+                        <?php else:?>
                             <li class="header__menu__item">
-                                <a href="<?= empty($menu_item['link']) ? "#" : $menu_item['link']; ?>"
-                                   class="header__menu__link"><?php echo $menu_item['text']; ?></a>
+                                <a href="<?=empty($menu_item['link']) ? "#" : $menu_item['link'];?>"
+                                   class="header__menu__link"><?php echo $menu_item['text'];?></a>
                                 <span class="header__dots-wrap">
 							        <span class="header__menu__link_dots"></span>
 						        </span>
                                 <ul class="header__menu-inner">
-                                    <?php foreach ($menu_item['items'] as $submenu_item) : ?>
-                                        <li><a href="<?php echo $submenu_item['link']; ?>"
-                                               class="header__menu__link header__menu-inner__link"><?php echo $submenu_item['text']; ?></a>
+                                    <?php foreach ($menu_item['items'] as $submenu_item) :?>
+                                        <li><a href="<?php echo $submenu_item['link'];?>"
+                                               class="header__menu__link header__menu-inner__link"><?php echo $submenu_item['text'];?></a>
                                         </li>
-                                    <?php endforeach; ?>
+                                    <?php endforeach;?>
                                 </ul>
                             </li>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
+                        <?php endif;?>
+                    <?php endforeach;?>
                 </ul>
-                <!--<button class="btnConsultation btn btn_nav"><?php /*echo $base['form_button_text_1']; */ ?></button>-->
+                <!--<button class="btnConsultation btn btn_nav"><?php /*echo $base['form_button_text_1']; */?></button>-->
             </nav>
         </div>
 

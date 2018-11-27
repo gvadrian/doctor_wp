@@ -49,16 +49,6 @@ html {
 
 body {
   box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-.scroll-blocker {
-  overflow-y: visible !important;
-}
-
-#all-content {
-  opacity: 0;
-  transition: all 0.3s ease;
 }
 
 ::selection {
@@ -76,14 +66,6 @@ body {
   letter-spacing: 0.33px;
   padding-bottom: 3rem;
   list-style-type: none;
-}
-
-.text-block__formatting * li {
-  padding-bottom: 1rem;
-}
-
-.text-block__formatting * li:last-child {
-  padding-bottom: 0;
 }
 
 .text-block__formatting * li::before {
@@ -550,10 +532,6 @@ a:focus {
   border-bottom: 1px dashed #243249;
 }
 
-.mobile-menu__nav-link.icamps-mobile__nav-link.active {
-  width: 5rem;
-}
-
 .mobile-menu__sub-menu {
   text-align: center;
 }
@@ -566,7 +544,6 @@ a:focus {
 .mobile-menu__sub-link {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .mobile-menu__phone {
@@ -1337,18 +1314,14 @@ a:focus {
 }
 
 .surgery-results__wrap-slider {
-  height: 75.1vw;
+  height: 92.5vw;
+  max-height: 92.5vw;
   width: 100%;
 }
 
 .surgery-results__slider {
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.surgery-results__slider-item:focus {
-  outline: none;
 }
 
 .surgery-results__slider .slick-dots {
@@ -1374,10 +1347,9 @@ a:focus {
   width: 0.8rem;
   height: 0.8rem;
   border: none;
-  background-color: rgba(36, 50, 73, 0.4);
+  background-color: rgba(255, 255, 255, 0.4);
   overflow: hidden;
   color: transparent;
-  border: 1px solid #afafaf;
 }
 
 .surgery-results__slider .slick-dots li.slick-active {
@@ -1388,21 +1360,23 @@ a:focus {
 .surgery-results__slider .slick-dots li.slick-active [type='button'] {
   width: 1.2rem;
   height: 1.2rem;
-  background-color: rgba(36, 50, 73, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
-.surgery-results__img {
-  height: 100%;
+.surgery-results__before, .surgery-results__after {
+  height: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
-  cursor: pointer;
-  display: flex;
 }
 
-.surgery-results__img:focus {
-  outline: none;
+.surgery-results__before::after, .surgery-results__after::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 37, 37, 0.2);
 }
 
 @media screen and (min-width: 768px) {
@@ -1439,16 +1413,25 @@ a:focus {
 
 @media screen and (min-width: 1024px) {
   .surgery-results__right {
-    display: flex;
-    justify-content: center;
+    max-height: 45rem;
   }
-  .surgery-results__img {
-    width: 100%;
+  .surgery-results__slider {
+    max-height: 45rem;
+  }
+  .surgery-results__slider.slick-slider.slick-vertical .slick-slide {
+    max-height: 45rem;
+  }
+  .surgery-results__slider.slick-initialized .slick-slide {
+    display: flex;
+    flex-direction: row;
+  }
+  .surgery-results__before, .surgery-results__after {
+    width: 50%;
     height: 100%;
   }
   .surgery-results__wrap-slider {
-    height: 50rem;
-    width: 66.57rem;
+    height: 45rem;
+    max-height: 45rem;
   }
 }
 
@@ -1495,149 +1478,79 @@ a:focus {
     z-index: 4;
   }
   .surgery-results__right {
-    flex: 0 0 63.4rem;
+    flex: 0 0 57.5%;
     margin: 0;
     left: -7rem;
+    width: calc(100% + 7rem);
     z-index: 3;
+    max-height: 70rem;
     overflow: hidden;
-    display: flex;
-    align-items: flex-end;
   }
   .surgery-results__slider {
-    height: 54.5rem;
-    top: 4.5rem;
-    box-shadow: none;
+    max-height: 70rem;
   }
   .surgery-results__slider.slick-slider.slick-vertical .slick-slide {
-    height: 47.6rem;
-    border: none;
+    height: 70rem;
+    max-height: 70rem;
   }
   .surgery-results__slider .slick-dots {
-    bottom: 1.7rem;
-    height: 2rem;
-    width: 100%;
-    right: 0rem;
-    flex-direction: row;
-    justify-content: center;
+    top: 0;
+    height: 70rem;
+    width: 2rem;
+    right: 4.7rem;
+    flex-direction: column;
+    align-items: center;
   }
   .surgery-results__slider .slick-dots li {
-    margin: 0 1rem;
+    margin: 1rem 0;
   }
   .surgery-results__slider .slick-dots [type='button']:hover {
     cursor: pointer;
   }
   .surgery-results__slider .slick-arrow {
     position: absolute;
+    right: 5.3rem;
     z-index: 5;
     border: none;
     color: transparent;
     background-color: transparent;
-    background-position: center;
+    background-size: 101px auto;
     background-repeat: no-repeat;
     display: inline-block;
+    background: url("../images/surgery-results/arrow-vertical_sprite.png") no-repeat;
+    overflow: hidden;
+    text-indent: -9999px;
+    text-align: left;
     width: 9px;
     height: 101px;
     outline: 1px solid transparent;
   }
   .surgery-results__slider .slick-arrow.slick-next {
-    bottom: 0rem;
-    width: 10rem;
-    height: 6rem;
-    right: 0;
-    background-image: url("../images/recommends-page/arrow-horiz_right-dark-lg.svg");
+    bottom: 6rem;
+    background-position: -0px -101px;
     cursor: pointer;
   }
   .surgery-results__slider .slick-arrow.slick-next:hover {
-    background-image: url("../images/recommends-page/arrow-horiz-hov_right-dark-lg.svg");
+    background-position: -9px -101px;
   }
   .surgery-results__slider .slick-arrow.slick-prev {
-    bottom: 0;
-    width: 10rem;
-    height: 6rem;
-    left: 0;
-    background-image: url("../images/recommends-page/arrow-horiz_left-dark-lg.svg");
+    top: 6rem;
+    background-position: -0px -0px;
     cursor: pointer;
   }
   .surgery-results__slider .slick-arrow.slick-prev:hover {
-    background-image: url("../images/recommends-page/arrow-horiz-hov_left-dark-lg.svg");
+    background-position: -9px -0px;
   }
   .surgery-results__slider.slick-initialized .slick-slide {
     display: block;
   }
-  .surgery-results__img {
+  .surgery-results__before, .surgery-results__after {
     width: 100%;
-    height: 47.6rem;
+    height: 50%;
   }
   .surgery-results__wrap-slider {
-    position: relative;
-    width: 100%;
-    height: 56.8rem;
-    bottom: 2.3rem;
-  }
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  display: flex;
-  top: 50%;
-  left: 50%;
-  z-index: 16;
-  transform: translate(-50%, -50%);
-}
-
-.preloader-bg {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-  opacity: 1;
-  width: 100%;
-  height: 100%;
-  z-index: 10001;
-  position: absolute;
-}
-
-.double-bounce1,
-.double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #243249;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 18;
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
-
-.double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
-
-@-webkit-keyframes sk-bounce {
-  0%,
-  100% {
-    -webkit-transform: scale(0);
-  }
-  50% {
-    -webkit-transform: scale(1);
-  }
-}
-
-@keyframes sk-bounce {
-  0%,
-  100% {
-    transform: scale(0);
-    -webkit-transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-    -webkit-transform: scale(1);
+    height: 70rem;
+    max-height: 70rem;
   }
 }
 
@@ -1657,7 +1570,7 @@ a:focus {
 .main-head__bg {
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 88% 0%;
+  background-position: center center;
   height: 100%;
   position: relative;
 }
@@ -1968,10 +1881,6 @@ a:focus {
   justify-content: space-around;
   align-items: center;
   height: 12rem;
-}
-
-.expert-smm .slick-initialized .slick-slide:focus {
-  outline: none;
 }
 
 .expert-smm__slider {
@@ -2737,11 +2646,6 @@ a:focus {
   .main-head__request-button:hover .main-head__square {
     width: 46.6%;
   }
-  .main-head__request-button:hover .main-head__request-line svg * {
-    fill: #fff;
-    opacity: 1;
-    transition: 0.5s ease-in-out;
-  }
   .main-head__square {
     position: absolute;
     height: 100%;
@@ -2788,6 +2692,7 @@ a:focus {
     margin: 0 auto;
     position: relative;
     z-index: 3;
+    top: -6rem;
   }
   #main-about-video {
     height: 60rem;
@@ -3171,12 +3076,6 @@ a:focus {
 @media screen and (min-width: 1366px) {
   .main-head__scroll {
     top: -11.5rem;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .main-about {
-    top: -6rem;
   }
 }
 
@@ -4491,13 +4390,77 @@ a:focus {
 .procedure-head__list-item.active .procedure-head__list-item_link {
   color: white;
   font-weight: 500;
-  font-family: "firasans-regular", sans-serif;
 }
 
-.procedure-results__wrap-slider {
-  z-index: 3;
+.procedure-slider {
   width: 100%;
+}
+
+.procedure-slider__wrap {
+  width: 100%;
+  height: 92.5vw;
+  max-height: 92.5vw;
   position: relative;
+}
+
+.procedure-slider__slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.procedure-slider__slider .slick-dots {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  bottom: 1rem;
+  list-style: none;
+}
+
+.procedure-slider__slider .slick-dots li {
+  width: 0.8rem;
+  height: 1.2rem;
+  display: flex;
+  align-items: center;
+  margin: 0 0.45rem;
+}
+
+.procedure-slider__slider .slick-dots [type='button'] {
+  outline: none;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  overflow: hidden;
+  color: transparent;
+}
+
+.procedure-slider__slider .slick-dots li.slick-active {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.procedure-slider__slider .slick-dots li.slick-active [type='button'] {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.procedure-slider__before, .procedure-slider__after {
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.procedure-slider__before::after, .procedure-slider__after::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 37, 37, 0.2);
 }
 
 .content {
@@ -4610,16 +4573,13 @@ a:focus {
     display: flex;
     flex-direction: row;
   }
-  .procedure-slider__img {
-    width: 100%;
+  .procedure-slider__before, .procedure-slider__after {
+    width: 50%;
     height: 100%;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  #procedureResulstSlider.surgery-results__slider {
-    top: 0;
-  }
   .procedure-head {
     margin-top: 11rem;
     height: 40rem;
@@ -4643,10 +4603,15 @@ a:focus {
   .procedure-head__list-item_link {
     font-size: 1.8rem;
   }
+  .procedure-head__list-item:hover {
+    padding-left: 5.4rem;
+  }
+  .procedure-head__list-item:hover .pointer__wrap {
+    left: 2rem;
+  }
   .procedure-head__list-item:hover .procedure-head__list-item_link {
     color: white;
-    font-weight: 400;
-    font-family: "firasans-medium", sans-serif;
+    font-weight: 500;
   }
   .procedure-slider {
     position: absolute;
@@ -4718,9 +4683,9 @@ a:focus {
   .procedure-slider__slider.slick-initialized .slick-slide {
     display: block;
   }
-  .procedure-slider__img {
+  .procedure-slider__before, .procedure-slider__after {
     width: 100%;
-    height: 100%;
+    height: 50%;
   }
   .procedure-info__wrap {
     padding-left: 0rem;
@@ -4730,7 +4695,7 @@ a:focus {
   .procedure-info__text-blocker {
     display: block;
     width: 68.8rem;
-    height: 16rem;
+    height: 30.9rem;
     float: right;
   }
   .procedure-info__width {
@@ -4738,12 +4703,6 @@ a:focus {
     max-width: 1106px;
     margin: 0 auto;
     padding-bottom: 16.4rem;
-  }
-  .procedure-results__wrap-slider {
-    width: 63.4rem;
-    position: absolute;
-    top: 4.5rem;
-    right: 0;
   }
   .icon__back {
     padding-right: 3.3rem;
@@ -6268,7 +6227,6 @@ a:focus {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
-    margin-bottom: 4.5rem;
   }
   .news-about__player {
     width: 100%;
@@ -6347,157 +6305,8 @@ a:focus {
   }
 }
 
-* {
-  box-sizing: border-box;
-}
-
-ul {
-  list-style-type: none;
-}
-
-body {
-  font-family: Verdana, sans-serif;
-}
-
-.month {
-  padding: 70px 25px;
-  padding-top: 2.5rem;
-  padding-bottom: 1.5rem;
-  width: 100%;
-  background-color: white;
-  text-align: center;
-}
-
-.month ul {
-  margin: 0;
-  padding: 0;
-}
-
-.month ul li {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-family: "firasans-regular", sans-serif;
-  color: #243249;
-  font-size: 1.6rem;
-  letter-spacing: 0.33px;
-}
-
-.month ul li.month-text span {
-  font-size: 1.3rem;
-  position: relative;
-  top: -0.4px;
-  margin-left: 1rem;
-}
-
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
-
-.month .next {
-  float: right;
-  padding-top: 10px;
-}
-
-.weekdays {
-  margin: 0;
-  padding: 0;
-  font-size: 1.2rem;
-  font-family: "firasans-regular", sans-serif;
-  color: #333;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 -0.5rem;
-}
-
-.weekdays li {
-  display: inline-block;
-  width: 10%;
-  text-align: center;
-  padding-left: 3rem;
-  color: #9fa0a4;
-  padding: 1.25rem 1.25rem;
-  position: relative;
-  left: -1rem;
-  cursor: pointer;
-}
-
-.days {
-  padding: 0.75rem 2.7rem;
-  margin: 0;
-  position: relative;
-  left: 0.5rem;
-}
-
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 10%;
-  text-align: center;
-  padding-bottom: 2.5rem;
-  font-family: "firasans-regular", sans-serif;
-  font-size: 12px;
-  color: #212b36;
-  padding: 1.25rem 1.55rem;
-  position: relative;
-  left: 0;
-  padding: 1.25rem 1.52rem;
-}
-
-.days li .event {
-  padding: 1.3rem;
-  position: relative;
-  left: -1.5rem;
-  border: 1px solid #243249;
-  cursor: pointer;
-}
-
-.days li .active {
-  padding: 5px;
-  background-image: linear-gradient(225deg, #4d5e72 0%, #243249 100%);
-  color: white !important;
-  padding: 1.3rem;
-  position: relative;
-  left: -1.5rem;
-  font-family: "firasans-regular", sans-serif;
-  cursor: pointer;
-}
-
-/* Add media queries for smaller screens */
-@media screen and (max-width: 1200px) {
-  .weekdays li,
-  .days li {
-    width: 13.1%;
-    padding: 1.25rem 1.5rem;
-    cursor: pointer;
-  }
-  .days {
-    padding: 0.75rem 2.5rem;
-  }
-  .weekdays {
-    margin: 0 1.2rem;
-    position: relative;
-    left: 0.75rem;
-  }
-}
-
-@media screen and (max-width: 420px) {
-  .weekdays li,
-  .days li {
-    width: 12.5%;
-  }
-  .days li .active {
-    padding: 2px;
-  }
-}
-
-@media screen and (max-width: 290px) {
-  .weekdays li,
-  .days li {
-    width: 12.2%;
-  }
+.main-head__school {
+  height: auto;
 }
 
 .main-head__img {
@@ -6511,7 +6320,7 @@ body {
   line-height: 2.8rem;
   text-transform: uppercase;
   font-family: "firasans-light", sans-serif;
-  padding: 1rem 0 2.5rem 0;
+  padding: 2.5rem 0;
 }
 
 .subtitle__outline {
@@ -6526,7 +6335,7 @@ body {
 .subtitle__school h2 {
   padding-left: 3.3rem;
   color: white;
-  font-family: "firasans-regular", sans-serif;
+  font-family: "firasans-light", sans-serif;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 2.8rem;
@@ -6568,14 +6377,6 @@ body {
   height: auto;
 }
 
-.school-head__text-block {
-  padding-bottom: 0;
-}
-
-.school-head__bg {
-  background-position: 75% 0%;
-}
-
 .school__thirdtitle {
   left: 0;
   position: relative;
@@ -6586,15 +6387,10 @@ body {
   color: #252525;
   font-family: "firasans-light", sans-serif;
   font-size: 1.8rem;
-  letter-spacing: 0.5px;
+  font-weight: 400;
   line-height: 2.8rem;
   text-transform: uppercase;
-  padding-left: 3.3rem;
-}
-
-.school-photos__wrap {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 4rem;
 }
 
 .second-wraper {
@@ -6606,114 +6402,19 @@ body {
 .calendar {
   width: 100%;
   height: auto;
+  box-shadow: 0px 0.5px 5px 0.5px;
 }
 
-.calendar__wrap {
+.calendar__month {
   width: 100%;
-  padding-top: 2.2rem;
-  padding-bottom: 6.5rem;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  height: 44rem;
+  height: 30rem;
+  background: pink;
 }
 
-.calendar__wrap .slick-list {
-  height: 45rem;
-}
-
-.calendar__wrap.slick-initialized.slick-slider .slick-dots {
-  position: absolute;
-  right: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 60.8rem;
-  z-index: 19;
-  width: auto;
-  height: 1.2rem;
-  top: auto;
-  bottom: 2.6rem;
-  transform: translateX(-50%);
-  left: 50%;
-}
-
-.calendar__wrap.slick-initialized.slick-slider .slick-dots li {
-  margin: 0rem 0.45rem;
-  list-style: none;
-  height: 0.8rem;
-}
-
-.calendar__wrap.slick-initialized.slick-slider .slick-dots li.slick-active {
-  width: 1.2rem;
-  height: 1.2rem;
-  background-color: rgba(36, 50, 73, 0.8);
-}
-
-.calendar__wrap.slick-initialized.slick-slider .slick-dots [type='button'] {
-  outline: none;
-  width: 0.8rem;
-  height: 0.8rem;
-  border: none;
-  background-color: rgba(36, 50, 73, 0.4);
-  overflow: hidden;
-  color: transparent;
-}
-
-.calendar__wrap.slick-initialized.slick-slider .slick-dots [type='button']:hover {
-  cursor: pointer;
-}
-
-.calendar__wrap.slick-initialized.slick-slider .slick-prev.slick-arrow {
-  position: absolute;
-  bottom: 0;
-  cursor: pointer;
-  background-image: url("../images/recommends-page/arrow-horiz_left-dark-sm.svg");
-  width: 6rem;
-  height: 6.5rem;
-  transition: background-image 0.5s ease-in-out;
-  background-color: none;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: none;
-  left: 1.5rem;
-  z-index: 7;
-}
-
-.calendar__wrap.slick-initialized.slick-slider .slick-next.slick-arrow {
-  position: absolute;
-  bottom: 0;
-  cursor: pointer;
-  background-image: url("../images/recommends-page/arrow-horiz_right-dark-sm.svg");
-  background-repeat: no-repeat;
-  width: 6rem;
-  height: 6.5rem;
-  transition: background-image 0.5s ease-in-out;
-  background-color: none;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: none;
-  right: 1.5rem;
-  z-index: 7;
-}
-
-.calendar__wrap.slick-initialized.slick-slider button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  color: transparent;
-  background-color: transparent;
-}
-
-.calendar__item {
+.calendar__cursors {
   width: 100%;
-  box-shadow: 0 4px 32px rgba(204, 204, 204, 0.24);
-  height: auto;
-  padding-bottom: 1rem;
-}
-
-.slick-initialized .slick-slide.calendar__item:focus {
-  outline: none;
+  height: 6.4rem;
+  background: blue;
 }
 
 .school__pointer {
@@ -6735,19 +6436,14 @@ body {
   flex-direction: column;
 }
 
-.courses__item-img {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 .courses__item-mask {
   width: 100%;
   height: 34.2rem;
   position: relative;
+}
+
+.courses__item-mask:first-child {
+  padding-top: 2rem;
 }
 
 .courses__item-mask:last-child {
@@ -6755,7 +6451,7 @@ body {
 }
 
 .courses__item_new-info h3 {
-  padding: 3.4rem 0 3.5rem 0;
+  padding: 3.2rem 0 4rem 0;
   color: linear-gradient(180deg, rgba(36, 50, 73, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
   font-family: "firasans-regular", sans-serif;
   font-size: 1.2rem;
@@ -6784,7 +6480,7 @@ body {
 .individual {
   width: 100%;
   height: 16rem;
-  padding-top: 4rem;
+  padding-top: 4.3rem;
   background-image: linear-gradient(225deg, #4d5e72 0%, #243249 100%);
   margin-top: 4rem;
   padding-left: 1.5rem;
@@ -6794,7 +6490,7 @@ body {
   position: relative;
   width: 100%;
   height: auto;
-  padding-left: 3.3rem;
+  padding-left: 4rem;
 }
 
 .individual__subclause h2 {
@@ -6815,7 +6511,7 @@ body {
   width: 100%;
   height: auto;
   padding: 0 1.5rem 0 1.5rem;
-  margin-top: -3.6rem;
+  margin-top: -3.7rem;
 }
 
 .internship__inner {
@@ -6865,7 +6561,6 @@ body {
   position: relative;
   padding-left: 3rem;
   position: relative;
-  height: 3rem;
 }
 
 .release_container__dates-activ span {
@@ -6896,7 +6591,7 @@ body {
 }
 
 .container__school_galery {
-  padding: 3rem 2.5rem 0 2.5rem;
+  padding-top: 3rem;
   width: 100%;
   height: auto;
   display: flex;
@@ -6922,19 +6617,10 @@ body {
     position: static;
     max-width: 100%;
   }
-  .style__tab-block {
-    padding: 0 2.5rem;
-  }
   .title__school {
-    display: block;
-    width: 70%;
     text-align: center;
-    margin: 0 auto;
     padding: 3.5rem 0;
     font-size: 2.4rem;
-  }
-  .title__school span {
-    line-height: 3rem;
   }
   .subtitle__school {
     position: relative;
@@ -6944,142 +6630,54 @@ body {
   }
   .subtitle__school h2 {
     font-size: 2.4rem;
-    padding-left: 3.3rem;
-    font-weight: 400;
+    padding-left: 6rem;
+  }
+  .subtitle__school::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 10rem;
+    height: 10px;
+    background-repeat: no-repeat;
+    top: 50%;
+    right: 0;
+    background-image: url("../images/recommends-page/arrow-horiz_right-light-lg.svg");
+    cursor: pointer;
+  }
+  .subtitle__school::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 10rem;
+    height: 10px;
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    background-image: url("../images/recommends-page/arrow-horiz_left-light-lg.svg");
+    transform: translate(-50%, -50%);
+    cursor: pointer;
   }
   .calendar {
     width: 72.2rem;
     height: auto;
     margin: 0 auto;
     position: relative;
-    position: relative;
-    top: -2.5rem;
   }
-  .calendar__slider {
-    position: relative;
-    z-index: 6;
-    top: 0;
-    height: 38rem;
-  }
-  .calendar__slider .slick-arrow {
-    position: absolute;
-    z-index: 5;
-    border: none;
-    color: transparent;
-    background-color: transparent;
-    display: inline-block;
-    overflow: hidden;
-    text-indent: -9999px;
-    text-align: left;
-    width: 10.2rem;
-    height: 0.6rem;
-    outline: 1px solid transparent;
-  }
-  .calendar__slider .slick-dots {
-    height: 1.2rem;
-    top: auto;
-    right: 50%;
-    z-index: 1;
-    transform: translateX(50%);
-    display: flex;
-    justify-content: center;
-    bottom: 3.5rem;
-    position: absolute;
-    align-items: center;
-  }
-  .calendar__slider .slick-dots li {
-    margin: 0 0.45rem;
-    list-style: none;
-    height: 0.8rem;
-  }
-  .calendar__slider .slick-dots li.slick-active {
-    width: 1.2rem;
-    height: 1.2rem;
-    background-color: rgba(36, 50, 73, 0.8);
-  }
-  .calendar__slider .slick-dots [type='button'] {
-    outline: none;
-    width: 0.8rem;
-    height: 0.8rem;
-    border: none;
-    background-color: rgba(36, 50, 73, 0.4);
-    overflow: hidden;
-    color: transparent;
-  }
-  .calendar__slider .slick-dots [type='button']:hover {
-    cursor: pointer;
-  }
-  .calendar__wrap {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    height: 41.5rem;
-  }
-  .calendar__wrap.slick-initialized.slick-slider .slick-prev.slick-arrow {
-    bottom: auto;
-    top: -8rem;
-    cursor: pointer;
-    background-image: url("../images/recommends-page/arrow-horiz_left-light-lg.svg");
-    width: 10rem;
-    height: 6rem;
-    left: auto;
-    right: 30rem;
-  }
-  .calendar__wrap.slick-initialized.slick-slider .slick-next.slick-arrow {
-    background-image: url("../images/recommends-page/arrow-horiz_right-light-lg.svg");
-    background-repeat: no-repeat;
-    width: 10rem;
-    height: 6rem;
-    right: 0;
-    bottom: auto;
-    top: -8rem;
-  }
-  .calendar__wrap.slick-initialized.slick-slider button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: transparent;
-    background-color: transparent;
-  }
-  .calendar__wrap .slick-list {
-    height: 36rem;
-  }
-  .calendar__item {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-  .second-wraper {
-    padding: 0;
+  .calendar__month {
+    margin-top: -12.8rem;
   }
   .insirt {
     height: 40rem;
-    padding: 0;
   }
   .school__container {
-    padding: 0 2.5rem 0 2.5rem;
+    padding: 0 1.5rem 0 1.5rem;
   }
   .school__container__thirdtitle {
     margin: 7.7rem 0 7.1rem 0;
   }
-  .school__thirdtitle h3 {
+  .school__container__thirdtitle h3 {
     font-size: 2.4rem;
-  }
-  .school__wrap {
-    top: 11rem;
-  }
-  .school-head__wrap {
-    height: auto;
-  }
-  .school-head__bg {
-    height: calc(100vh - 29rem);
-  }
-  .school-head__text-wrap {
-    width: 100%;
-    max-width: 100%;
-    bottom: 0;
-    position: relative;
-  }
-  .school-head__text-block {
-    padding-left: 2.5rem;
+    font-weight: 400;
   }
   .courses__item {
     display: flex;
@@ -7095,7 +6693,7 @@ body {
     width: 26rem;
   }
   .courses__item_new {
-    width: 45.5rem;
+    width: 43.5rem;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -7111,13 +6709,13 @@ body {
   }
   .courses__item_new-info {
     padding-top: 1rem;
+    height: 28rem;
   }
   .courses__item_new-info h3 {
     padding: 0;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 2.8rem;
-    padding-bottom: 3rem;
   }
   .courses__item_new-info p {
     font-size: 1.4rem;
@@ -7125,7 +6723,7 @@ body {
     line-height: 2.8rem;
   }
   .individual {
-    padding: 6rem 2.5rem 0 2.5rem;
+    padding-top: 6rem;
     margin-top: 15rem;
     height: 28rem;
   }
@@ -7137,12 +6735,8 @@ body {
     font-weight: 400;
     line-height: 2.8rem;
   }
-  .individual__subclause h2 {
-    font-size: 2rem;
-    font-weight: 400;
-  }
   .internship {
-    padding: 0 2.5rem 0 2.5rem;
+    padding: 0 2.2rem 0 2.2rem;
     margin-top: -15rem;
   }
   .internship__inner {
@@ -7171,13 +6765,11 @@ body {
     left: 0;
   }
   .release_container__dates {
-    padding: 0 2.5rem 0 2.5rem;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-  }
-  .release_container__dates-activ {
-    width: 50%;
   }
   .release_container__dates-activ span {
     font-size: 1.8rem;
@@ -7205,15 +6797,11 @@ body {
 }
 
 @media screen and (min-width: 1200px) {
-  .lower_lines.lines {
-    padding-top: 24rem;
-  }
   main {
     overflow: hidden;
   }
   .school__scroll {
-    top: auto;
-    bottom: 22.5rem;
+    top: -50rem;
   }
   .school__main-head {
     height: 110vh;
@@ -7230,14 +6818,12 @@ body {
     background-image: none;
   }
   .insirt {
-    height: calc(100vh - 11rem);
-    justify-content: flex-start;
+    height: 100%;
   }
   .school__wrap {
     padding: 0;
     position: relative;
     z-index: 2;
-    top: 16rem;
   }
   .school__wrap::before {
     display: none;
@@ -7249,15 +6835,14 @@ body {
     max-width: 60%;
     font-size: 3.6rem;
     line-height: 48px;
+    top: 50%;
     padding-top: 0;
-    top: calc(100vh - 39.5rem);
-    transform: none;
-    margin: 0;
+    transform: translateY(-50%);
   }
   .title__school::before {
     content: '';
     height: 23.5rem;
-    right: 21rem;
+    right: 1rem;
     top: 40%;
     transform: translateY(-50%);
     position: absolute;
@@ -7274,7 +6859,6 @@ body {
     max-width: 100%;
     width: 100%;
     position: relative;
-    top: calc(100vh - 24.1rem);
   }
   .subtitle__school {
     padding: 5.8rem 0 5.4rem 0;
@@ -7290,36 +6874,13 @@ body {
     position: absolute;
     z-index: 0;
   }
-  .school__thirdtitle {
-    margin: 8rem 0 8rem 0;
-  }
   .school__container {
     padding: 0;
     width: 1106px;
     margin: 0 auto;
   }
-  .school-head__bg {
-    height: calc(100vh - 11rem);
-  }
-  .school-head__text-block {
-    padding-top: 0;
-  }
-  .school-head__text-block::before {
-    content: none;
-  }
-  .school-head__text-wrap {
-    top: 0;
-    transform: none;
-    position: absolute;
-  }
-  .school-photos__wrap {
-    max-width: 1106px;
-    margin: 13rem auto 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .school-photos__slider.icamps-photos__slider {
-    margin-bottom: 0;
+  .school__container__thirdtitle {
+    margin: 8rem 0 8rem 0;
   }
   .calendar {
     width: 1106px;
@@ -7327,35 +6888,8 @@ body {
     margin: 0 auto;
     position: relative;
   }
-  .calendar__wrap {
-    padding-top: 5.5rem;
-    padding-bottom: 5.5rem;
-    height: 45rem;
-  }
-  .calendar__wrap.slick-initialized.slick-slider .slick-prev.slick-arrow:hover {
-    background-image: url("../images/recommends-page/arrow-horiz-hov_left-light-lg.svg");
-  }
-  .calendar__wrap.slick-initialized.slick-slider .slick-next.slick-arrow:hover {
-    background-image: url("../images/recommends-page/arrow-horiz-hov_right-light-lg.svg");
-  }
-  .calendar__wrap.slick-initialized.slick-slider button {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: transparent;
-    background-color: transparent;
-  }
-  .calendar__item {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-  }
-  .calendar__slider {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-  .calendar__slider .slick-slist {
-    margin: 0px 12.5px;
-    margin-left: 6px;
+  .calendar__month {
+    margin-top: 3.5rem;
   }
   .second-wraper {
     padding: 0;
@@ -7390,7 +6924,6 @@ body {
   }
   .internship {
     padding: 0;
-    margin-top: -26.8rem;
   }
   .internship__inner {
     height: auto;
@@ -7411,15 +6944,12 @@ body {
     padding-bottom: 0;
   }
   .individual {
-    padding: 5.5rem 0 0 0;
-    height: 40rem;
+    padding-top: 5.5rem;
+    padding-left: 0;
   }
   .individual__subclause {
     margin: 0 auto;
     width: 1106px;
-  }
-  .individual__subclause h2 {
-    font-size: 2.4rem;
   }
   .releas {
     width: 1106px;
@@ -7427,9 +6957,6 @@ body {
   }
   .school_btn {
     background: white;
-  }
-  .container_upper {
-    padding-bottom: 17rem;
   }
 }
 
@@ -8078,7 +7605,6 @@ body {
   max-height: 16rem;
   flex-wrap: wrap;
   padding-bottom: 2.5rem;
-  padding-left: 1.5rem;
 }
 
 .recommends-page__wrap .doctor-recommends__nav-link {
@@ -8089,24 +7615,7 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.33px;
-  position: relative;
-  padding: 1rem 0 1rem 3rem;
-  letter-spacing: 0.33px;
-}
-
-.recommends-page__wrap .doctor-recommends__nav-link .icamps-photos__pointer.pointer__wrap {
-  position: absolute;
-  visibility: hidden;
-}
-
-.recommends-page__wrap .doctor-recommends__nav-link.current {
-  color: white;
-  font-family: "firasans-medium", sans-serif;
-  font-weight: 400;
-}
-
-.recommends-page__wrap .doctor-recommends__nav-link.current .icamps-photos__pointer.pointer__wrap {
-  visibility: visible;
+  padding-bottom: 1.5rem;
 }
 
 .recommends-page__wrap .doctor-recommends__header {
@@ -8215,10 +7724,6 @@ body {
   margin: 0 20px;
 }
 
-.recommends-page__wrap .synch-carousels .gallery .slick-slide:focus {
-  outline: none;
-}
-
 .recommends-page__wrap .synch-carousels .gallery2 .slick-dots {
   height: 1.2rem;
   top: auto;
@@ -8285,6 +7790,7 @@ body {
   bottom: 0;
   cursor: pointer;
   background-image: url("../images/recommends-page/arrow-horiz_left-dark-sm.svg");
+  background-repeat: no-repeat;
   width: 6rem;
   height: 6rem;
   transition: background-image 0.5s ease-in-out;
@@ -8322,10 +7828,6 @@ body {
   bottom: 1rem;
 }
 
-.recommends__pointer.icamps-photos__pointer {
-  display: flex;
-}
-
 @media screen and (min-width: 768px) {
   .recommends-page__wrap {
     margin-top: 13rem;
@@ -8337,7 +7839,6 @@ body {
   .recommends-page__wrap .doctor-recommends__header-wrap {
     height: 31rem;
     padding-left: 2.5rem;
-    width: 100%;
   }
   .recommends-page__wrap .doctor-recommends__width {
     height: auto;
@@ -8345,10 +7846,9 @@ body {
   .recommends-page__wrap .doctor-recommends__nav {
     padding-bottom: 2.5rem;
     max-height: 17rem;
-    padding-left: 6rem;
   }
   .recommends-page__wrap .doctor-recommends__nav-link {
-    padding: 1rem 0 1rem 3.3rem;
+    padding-bottom: 1.75rem;
     font-size: 1.4rem;
     letter-spacing: 0.39px;
   }
@@ -8363,9 +7863,6 @@ body {
     display: block;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-    margin-left: 0.7rem;
-    width: calc(100% - 3rem);
-    margin: 0 auto;
   }
   .recommends-page__wrap .synch-carousels .gallery2 .slick-dots {
     bottom: 5.5rem;
@@ -8386,13 +7883,13 @@ body {
     background-image: url("../images/recommends-page/arrow-horiz_left-dark-lg.svg");
     width: 10rem;
     height: 6rem;
-    left: 4rem;
+    left: 2.5rem;
   }
   .recommends-page__wrap .synch-carousels button.arrow-right.slick-arrow {
     background-image: url("../images/recommends-page/arrow-horiz_right-dark-lg.svg");
     width: 10rem;
     height: 6rem;
-    right: 4rem;
+    right: 2.5rem;
   }
   .recommends-page__wrap .recommends-slider__item {
     height: 42rem;
@@ -8469,20 +7966,14 @@ body {
     width: 25rem;
     flex-wrap: wrap;
     max-height: 42rem;
-    padding-left: 0;
   }
   .recommends-page__wrap .doctor-recommends__nav-link {
-    padding: 1rem 0 1rem 3.3rem;
+    padding-bottom: 1.5rem;
     width: 100%;
     line-height: 28px;
     max-width: 16.8rem;
     font-size: 1.8rem;
     letter-spacing: 0.5px;
-  }
-  .recommends-page__wrap .doctor-recommends__nav-link:hover {
-    font-family: "firasans-medium", sans-serif;
-    color: white;
-    font-weight: 400;
   }
   .recommends-page__wrap .recommends-slider__item, .recommends-page__wrap .recommends-slider__preview {
     height: 100%;
@@ -8508,7 +7999,6 @@ body {
     height: 100%;
     padding-left: 0;
     padding-right: 0;
-    position: absolute;
   }
   .recommends-page__wrap .synch-carousels .gallery .slick-list {
     height: 100%;
@@ -8574,14 +8064,14 @@ body {
   }
   .recommends-page__wrap .synch-carousels button.arrow-left.slick-arrow {
     background-image: url("../images/recommends-page/arrow-horiz_left-light-lg.svg");
-    left: 2rem;
+    left: 1.5rem;
   }
   .recommends-page__wrap .synch-carousels button.arrow-left.slick-arrow:hover {
     background-image: url("../images/recommends-page/arrow-horiz-hov_left-light-lg.svg");
   }
   .recommends-page__wrap .synch-carousels button.arrow-right.slick-arrow {
     background-image: url("../images/recommends-page/arrow-horiz_right-light-lg.svg");
-    right: 2rem;
+    right: 1.5rem;
   }
   .recommends-page__wrap .synch-carousels button.arrow-right.slick-arrow:hover {
     background-image: url("../images/recommends-page/arrow-horiz-hov_right-light-lg.svg");
@@ -9113,6 +8603,19 @@ body.logged-in .YouTubePopUp-Wrap {
   display: flex;
 }
 
+.icamps-photos__wrap-gallery .nav-arrows {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  bottom: -50px;
+  justify-content: space-between;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 7.5rem;
+  width: 100%;
+  bottom: 0rem;
+}
+
 .icamps-photos__wrap-gallery .slick-slide {
   height: auto;
 }
@@ -9164,7 +8667,7 @@ body.logged-in .YouTubePopUp-Wrap {
   cursor: pointer;
 }
 
-.icamps-photos__wrap-gallery button.slick-prev.slick-arrow {
+.icamps-photos__wrap-gallery button.arrow-left.slick-arrow {
   cursor: pointer;
   background-image: url("../images/icamps/arrow-horiz_left-dark-sm.svg");
   background-repeat: no-repeat;
@@ -9176,12 +8679,9 @@ body.logged-in .YouTubePopUp-Wrap {
   background-position: center;
   transform: none;
   left: 0;
-  position: absolute;
-  bottom: 0;
-  color: transparent;
 }
 
-.icamps-photos__wrap-gallery button.slick-next.slick-arrow {
+.icamps-photos__wrap-gallery button.arrow-right.slick-arrow {
   cursor: pointer;
   background-image: url("../images/icamps/arrow-horiz_right-dark-sm.svg");
   background-repeat: no-repeat;
@@ -9193,15 +8693,11 @@ body.logged-in .YouTubePopUp-Wrap {
   background-position: center;
   transform: none;
   right: 0;
-  position: absolute;
-  bottom: 0;
-  color: transparent;
 }
 
 .icamps-photos__slider {
   display: flex;
   padding-bottom: 7.5rem;
-  position: relative;
 }
 
 .icamps-photos__slider .slick-list, .icamps-photos__slider .slick-track {
@@ -9223,11 +8719,6 @@ body.logged-in .YouTubePopUp-Wrap {
   background-position: center;
   width: 100%;
   height: 100%;
-  cursor: pointer;
-}
-
-.icamps-reviews__wrap .recommends-page__wrap.main-page__section-gap .request-block {
-  bottom: -9rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -9316,11 +8807,6 @@ body.logged-in .YouTubePopUp-Wrap {
   }
   .icamps-photos__tab {
     width: 50%;
-    cursor: pointer;
-  }
-  .icamps-photos__tab:hover {
-    font-family: "firasans-medium", sans-serif;
-    color: #243249;
   }
   .icamps-photos__wrap-gallery .nav-arrows {
     height: 9rem;
@@ -9331,19 +8817,17 @@ body.logged-in .YouTubePopUp-Wrap {
     outline: none;
     cursor: pointer;
   }
-  .icamps-photos__wrap-gallery button.slick-prev.slick-arrow {
+  .icamps-photos__wrap-gallery button.arrow-left.slick-arrow {
     background-image: url("../images/icamps/arrow-horiz_left-dark-lg.svg");
     width: 10rem;
     height: 6rem;
-    left: 1.25rem;
-    bottom: 1.5rem;
+    left: 0;
   }
-  .icamps-photos__wrap-gallery button.slick-next.slick-arrow {
+  .icamps-photos__wrap-gallery button.arrow-right.slick-arrow {
     background-image: url("../images/icamps/arrow-horiz_right-dark-lg.svg");
     width: 10rem;
     height: 6rem;
-    right: 1.25rem;
-    bottom: 1.5rem;
+    right: 0;
   }
   .icamps-photos__slider {
     margin: 0 -1.25rem;
@@ -9365,9 +8849,6 @@ body.logged-in .YouTubePopUp-Wrap {
   }
   .icamps-photos__slide {
     height: auto;
-  }
-  .icamps-reviews__wrap .recommends-page__wrap.main-page__section-gap .request-block {
-    bottom: -9rem;
   }
 }
 
@@ -9513,18 +8994,10 @@ body.logged-in .YouTubePopUp-Wrap {
     height: 14.6rem;
     bottom: 2.6rem;
   }
-  .icamps-photos__wrap-gallery button.slick-prev.slick-arrow {
-    bottom: 4.2rem;
-    left: 0;
-  }
-  .icamps-photos__wrap-gallery button.slick-prev.slick-arrow:hover {
+  .icamps-photos__wrap-gallery button.arrow-left.slick-arrow:hover {
     background-image: url("../images/icamps/arrow-horiz-hov_left-dark-lg.svg");
   }
-  .icamps-photos__wrap-gallery button.slick-next.slick-arrow {
-    bottom: 4.2rem;
-    right: 0;
-  }
-  .icamps-photos__wrap-gallery button.slick-next.slick-arrow:hover {
+  .icamps-photos__wrap-gallery button.arrow-right.slick-arrow:hover {
     background-image: url("../images/icamps/arrow-horiz-hov_right-dark-lg.svg");
   }
   .icamps-photos__slider {
@@ -9558,226 +9031,5 @@ body.logged-in .YouTubePopUp-Wrap {
     top: 2rem;
     margin-left: 1.4rem;
     width: calc(50% - 1.4rem) !important;
-  }
-  .icamps-reviews__wrap .recommends-page__wrap.main-page__section-gap .request-block {
-    bottom: 0;
-  }
-}
-
-.courses__wrap {
-  margin-top: 6rem;
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  height: auto;
-}
-
-.courses__head {
-  width: 100%;
-  height: auto;
-}
-
-.courses__head-wrap {
-  width: 100%;
-  height: auto;
-  background-image: linear-gradient(225deg, #4d5e72 0%, #243249 100%);
-  padding: 3rem 1.5rem 4rem 1.5rem;
-}
-
-.fblock_title {
-  color: white;
-  font-family: "firasans-regular", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 2.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.33px;
-}
-
-.fblock_lead {
-  color: white;
-  font-family: "firasans-regular", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 2.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.33px;
-  padding: 4rem 0 4rem 0;
-}
-
-.fblock::after {
-  content: " ";
-  width: 100%;
-  height: 1px;
-  background-color: white;
-  display: block;
-  opacity: 0.2;
-  margin: 0 auto;
-}
-
-.sblock {
-  padding-top: 4rem;
-}
-
-.sblock p {
-  color: white;
-  font-family: "firasans-regular", sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 2.8rem;
-  letter-spacing: 0.33px;
-}
-
-.sblock_date li {
-  color: white;
-  font-family: "firasans-regular", sans-serif;
-}
-
-.sblock_date li::before {
-  color: white;
-}
-
-.sblock_date:last-child {
-  padding-top: 3rem;
-}
-
-.courses__slider {
-  width: 100%;
-  height: 122vw;
-}
-
-.courses__img {
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.courses__container {
-  width: 100%;
-  height: auto;
-}
-
-.first__inner {
-  padding: 4rem 1.5rem 4rem 1.5rem;
-}
-
-.first__day {
-  width: 100%;
-  height: auto;
-}
-
-.first__day h2 {
-  font-weight: 400;
-  letter-spacing: 0.28px;
-  letter-spacing: 0.2px;
-}
-
-.first__day-item p {
-  font-weight: 400;
-  letter-spacing: 0.28px;
-  letter-spacing: 0.2px;
-}
-
-.item_low {
-  padding-bottom: 0;
-  font-weight: 600;
-  color: #565656;
-  font-family: "firasans-light", sans-serif;
-  font-size: 1rem;
-  line-height: 2.2rem;
-}
-
-.second__inner {
-  width: 100%;
-  height: auto;
-  background: rgba(79, 111, 158, 0.1);
-}
-
-.second__day {
-  padding: 4rem 1.5rem 4rem 1.5rem;
-}
-
-.second__day h2 {
-  font-weight: 400;
-  letter-spacing: 0.28px;
-  letter-spacing: 0.2px;
-}
-
-.courses__btn-item p {
-  font-weight: 400;
-  letter-spacing: 0.28px;
-  letter-spacing: 0.2px;
-}
-
-.courses__btn {
-  top: -4.6rem;
-  position: relative;
-}
-
-.courses__btn-bg.request-button__dark {
-  background-color: #fff;
-}
-
-.btn_about {
-  background: #fff;
-}
-
-@media screen and (min-width: 768px) {
-  .courses__wrap {
-    margin-top: 13rem;
-  }
-  .courses__head-wrap {
-    padding: 5rem 2rem 2rem 2rem;
-  }
-  .fblock_title {
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 2.4rem;
-  }
-  .sblock {
-    display: flex;
-  }
-  .sblock_number {
-    width: 50%;
-    height: auto;
-  }
-  .sblock_date {
-    width: 50%;
-    height: auto;
-  }
-  .sblock_date:last-child {
-    padding-top: 0;
-  }
-  .first__inner {
-    padding: 4rem 1.5rem 4rem 1.5rem;
-  }
-  .first__day {
-    -moz-column-count: 2;
-    -moz-column-width: 200px;
-    -moz-column-gap: 2em;
-    -webkit-column-count: 2;
-    -webkit-column-width: 200px;
-    -webkit-column-gap: 2em;
-    column-count: 2;
-    column-width: 200px;
-    column-gap: 2em;
-  }
-  .second__day {
-    padding: 4rem 1.5rem 4rem 1.5rem;
-  }
-  .courses__btn {
-    top: -6rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .courses__btn {
-    top: -8rem;
-    background: none;
-  }
-  .btn_about {
-    top: -6rem;
   }
 }

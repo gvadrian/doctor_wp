@@ -1,4 +1,4 @@
-<?php global $base, $current_lang_url; ?>
+<?php global $base, $current_lang_url;?>
 
 <?php
 $langs = array('ru', 'en', 'uk');
@@ -16,19 +16,17 @@ if ($current_lang) {
 $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $current_lang : 'ru';
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes();?>>
 <html lang="ua">
 
 <head>
     <meta charset="utf-8">
-    <title><?php wp_title(); ?></title>
+    <title><?php wp_title();?></title>
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <?php wp_head(); ?>
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/libs/css/slick.min.css">
-    <link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/main.css">
+    <?php wp_head();?>
     <meta name="theme-color" content="#000">
 </head>
 
@@ -47,14 +45,14 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
 <header class="header">
     <div class="header__container">
         <div class="header__logo">
-            <a class="header__logo-link" href="<?= $current_lang_url ?>">
-                <img class="header__img" src="<?= get_template_directory_uri() ?>/images/DoctorDenLogo.png" alt="Doctor Den" />
+            <a class="header__logo-link" href="<?=$current_lang_url?>">
+                <img class="header__img" src="<?=get_template_directory_uri()?>/images/DoctorDenLogo.png" alt="Doctor Den" />
             </a>
         </div>
 
         <div class="header__contacts">
             <div class="header__socials">
-                <a href="https://www.youtube.com/channel/UCsnaPSTBVu5UNOn-Lu5Dojw" target="_blank" class="header__social-link">
+                <a href="<?=$base['youtube']?>" target="_blank" class="header__social-link">
                     <div class="header__social-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="11" viewBox="0 0 16 11">
                             <defs>
@@ -70,7 +68,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
 
                     </div>
                 </a>
-                <a href="https://www.facebook.com/pavel.denishuk" target="_blank" class="header__social-link">
+                <a href="<?=$base['facebook']?>" target="_blank" class="header__social-link">
                     <div class="header__social-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="16" viewBox="0 0 10 16">
                             <defs>
@@ -85,7 +83,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                         </svg>
                     </div>
                 </a>
-                <a href="https://www.instagram.com/anacosmo_clinic/" target="_blank" class="header__social-link">
+                <a href="<?=$base['instagram']?>" target="_blank" class="header__social-link">
                     <div class="header__social-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="16" viewBox="0 0 17 16">
                             <defs>
@@ -104,7 +102,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                         </svg>
                     </div>
                 </a>
-                <a href="https://uk.wikipedia.org/wiki/Денищук_Павло_Андрійович" target="_blank" class="header__social-link">
+                <a href="<?=$base['wiki']?>" target="_blank" class="header__social-link">
                     <div class="header__social-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="12" viewBox="0 0 17 12">
                             <defs>
@@ -119,7 +117,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                         </svg>
                     </div>
                 </a>
-                <a href="https://t.me/ drden_plastic" target="_blank" class="header__social-link">
+                <a href="<?=$base['telegram']?>" target="_blank" class="header__social-link">
                     <div class="header__social-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="14" viewBox="0 0 16 14">
                             <defs>
@@ -144,12 +142,12 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
             </div>
             <div class="header__phone">
                 <a class="header__phone-link" href="tel:+38 (044) 483 21 78">
-                    <?= $base['header_phones'][0]['phone'] ?>
+                    <?=$base['header_phones'][0]['phone']?>
                 </a>
             </div>
             <div id="header-request-btn" class="header__request-wrap">
                 <a class="header__request-button request-button">
-                    <?= $base['button_text_register_for_appointment'] ?>
+                    <?=$base['button_text_register_for_appointment']?>
                 </a>
             </div>
         </div>
@@ -157,26 +155,26 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
         </div>
         <nav class="header__nav">
             <ul class="header__nav-list">
-                <?php foreach ($base['menu'] as $menu_item) : ?>
-                    <?php if ($menu_item['acf_fc_layout'] == 'standard') : ?>
+                <?php foreach ($base['menu'] as $menu_item) :?>
+                    <?php if ($menu_item['acf_fc_layout'] == 'standard') :?>
                         <li class="header__nav-item">
-                            <a class="header__nav-link" href="<?= empty($menu_item['link']) ? "#" : $menu_item['link'] ?>">
-                                <?= $menu_item['text'] ?>
+                            <a class="header__nav-link" href="<?=empty($menu_item['link']) ? "#" : $menu_item['link']?>">
+                                <?=$menu_item['text']?>
                             </a>
                         </li>
-                    <?php else: ?>
+                    <?php else:?>
                         <li class="sub-menu header__nav-item">
-                            <a class="header__nav-link sub-header"><?= $menu_item['text']; ?></a>
+                            <a class="header__nav-link sub-header"><?=$menu_item['text'];?></a>
                             <div class="sub-links menu__sub-links">
-                                <?php foreach ($menu_item['items'] as $submenu_item) : ?>
-                                    <a class="nav-link header__nav-link" href="<?= $submenu_item['link'] ?>">
-                                        <?= $submenu_item['text'] ?>
+                                <?php foreach ($menu_item['items'] as $submenu_item) :?>
+                                    <a class="nav-link header__nav-link" href="<?=$submenu_item['link']?>">
+                                        <?=$submenu_item['text']?>
                                     </a>
-                                <?php endforeach; ?>
+                                <?php endforeach;?>
                             </div>
                         </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+                    <?php endif;?>
+                <?php endforeach;?>
             </ul>
         </nav>
     </div>
@@ -243,26 +241,26 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
         </div>
         <nav class="mobile-menu__nav">
             <ul class="mobile-menu__nav-list">
-                <?php foreach ($base['menu'] as $menu_item) : ?>
-                    <?php if ($menu_item['acf_fc_layout'] == 'standard') : ?>
+                <?php foreach ($base['menu'] as $menu_item) :?>
+                    <?php if ($menu_item['acf_fc_layout'] == 'standard') :?>
                         <li class="mobile-menu__nav-item">
-                            <a class="mobile-menu__nav-link" href="<?= empty($menu_item['link']) ? "#" : $menu_item['link'] ?>">
-                                <?= $menu_item['text'] ?>
+                            <a class="mobile-menu__nav-link" href="<?=empty($menu_item['link']) ? "#" : $menu_item['link']?>">
+                                <?=$menu_item['text']?>
                             </a>
                         </li>
-                    <?php else: ?>
+                    <?php else:?>
                         <li class="mobile-menu__sub-menu">
-                            <a class="sub-header mobile-menu__nav-link"><?= $menu_item['text'] ?></a>
+                            <a class="sub-header mobile-menu__nav-link"><?=$menu_item['text']?></a>
                             <div class="mobile-menu__sub-link">
-                                <?php foreach ($menu_item['items'] as $submenu_item) : ?>
-                                    <a class="nav-link mobile-menu__nav-link" href="<?= $submenu_item['link']; ?>">
-                                        <?= $submenu_item['text']; ?>
+                                <?php foreach ($menu_item['items'] as $submenu_item) :?>
+                                    <a class="nav-link mobile-menu__nav-link" href="<?=$submenu_item['link'];?>">
+                                        <?=$submenu_item['text'];?>
                                     </a>
-                                <?php endforeach; ?>
+                                <?php endforeach;?>
                             </div>
                         </li>
-                    <?php endif; ?>
-                <?php endforeach; ?>
+                    <?php endif;?>
+                <?php endforeach;?>
             </ul>
         </nav>
         <div class="mobile-menu__phone">
