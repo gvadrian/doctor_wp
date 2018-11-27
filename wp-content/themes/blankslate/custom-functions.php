@@ -26,7 +26,7 @@ function load_scripts()
     //specific scripts and styles for pages
     if (is_front_page())
         wp_enqueue_script('main-page', get_template_directory_uri() . '/js/main-page.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/about/'))
+    if (strpos($_SERVER['REQUEST_URI'], '/about/') !== false)
         wp_enqueue_script('about-page', get_template_directory_uri() . '/js/about-page.min.js', array(), false, true);
     if (strpos($_SERVER['REQUEST_URI'], '/before-after/'))
         wp_enqueue_script('before-after-page', get_template_directory_uri() . '/js/before-after-page.min.js', array(), false, true);

@@ -7,19 +7,18 @@
 get_header();
 $fields = get_fields();
 global $base;
-//pre($fields);die;
 ?>
 <main>
     <section class="main-head">
         <div class="main-head__wrap">
-            <div class="main-head__bg" style="background-image: url('<?= $fields['first_banner']['image'] ?>');">
+            <div class="main-head__bg" style="background-image: url('<?= $fields['first_block']['image'] ?>');">
                 <div class="main-head__mask"></div>
             </div>
             <div class="main-head__text-wrap">
                 <div class="main-head__text-block">
                     <div class="main-head__text-wrapper">
-                        <h1 class="main-head__h1"><?= $fields['first_banner']['text'] ?></h1>
-                        <h3 class="main-head__h3"><?= $fields['first_banner']['sign'] ?></h3>
+                        <h1 class="main-head__h1"><?= $fields['first_block']['text'] ?></h1>
+                        <h3 class="main-head__h3"><?= $fields['first_block']['sign'] ?></h3>
                     </div>
                 </div>
 
@@ -68,7 +67,7 @@ global $base;
     <section class="main-about">
         <div class="main-about__wrap">
             <div id="main-about-video" class="main-about__video" style="background-image: url('<?= get_template_directory_uri(); ?>/images/about-page/video_poster.jpg')">
-                <a class="inlinePlayButton" href="https://www.youtube.com/watch?v=Mb5SVl5Tp2M"></a>
+                <a class="inlinePlayButton" href="https://www.youtube.com/watch?v=<?=$fields['second_block']['video_code']?>"></a>
             </div>
         </div>
     </section>
@@ -85,22 +84,16 @@ global $base;
         </div>
         <section class="about-surgeon">
             <div class="about-surgeon__header">
-                <h2 class="about-surgeon__h2">Пластический хирург Денищук Павел Андреевич</h2>
+                <h2 class="about-surgeon__h2"><?=$fields['second_block']['sign']?></h2>
             </div>
             <div class="about-surgeon__text">
                 <div class="about-surgeon__paragraphs">
-                    <p>Всемирно признанный пластический хирург за безопасность и качество авторских методик ринопластики
-                        и подтяжки лица, кандидат медицинских наук, врач высшей категории.</p>
-
-                    <p>Обучил более 100 хирургов-последователей в собственной Школе пластической хирургии. Его приглашают
-                        делиться своим опытом на лучшие конгрессы пластической хирургии. Учредитель международного конгресса
-                        для пластических хирургов и косметологов ICAMPS - единственного в Украине, на который приезжают
-                        обучаться доктора со всего мира.</p>
+                    <?=$fields['second_block']['text']?>
                 </div>
             </div>
             <div class="about-surgeon__more more">
                 <div class="about-surgeon__more-btn more__btn">
-                    <a class="about-surgeon__more-link more__link" href="./about-page.html">узнать больше</a>
+                    <a class="about-surgeon__more-link more__link" href="<?=$fields['second_block']['button_link']?>"><?=$base['button_detail_text']?></a>
                 </div>
             </div>
         </section>
@@ -172,7 +165,7 @@ global $base;
                     </div>
                 </div>
                 <div class="surgery-projects__header">
-                    <h2 class="surgery-projects__h2">Основатель и лидер проектов</h2>
+                    <h2 class="surgery-projects__h2"><?=$fields['fourth_block']['title']?></h2>
                     <div class="surgery-projects__pointer pointer__wrap">
                         <div class="surgery-projects__square pointer__square-light">
                         </div>
@@ -180,33 +173,27 @@ global $base;
                 </div>
             </div>
             <div class="surgery-projects__gallery">
-                <a href="./icamps.html" style="background-image: url('<?= get_template_directory_uri(); ?>/images/main-page/icamps-link.png')" class="surgery-projects__gallery-link">
-                    <div class="surgery-projects__gallery-text">Международный конгресс ICAMPS </div>
-                </a>
-                <a href="./school.html" style="background-image: url('<?= get_template_directory_uri(); ?>/images/main-page/school-link.png')" class="surgery-projects__gallery-link">
-                    <div class="surgery-projects__gallery-text">Школа пластической хирургии </div>
-                </a>
-                <a href="https://www.youtube.com/channel/UCsnaPSTBVu5UNOn-Lu5Dojw" target="_blank" style="background-image: url('<?= get_template_directory_uri(); ?>/images/main-page/youtube-proj-link.png')"
-                   class="surgery-projects__gallery-link">
-                    <div class="surgery-projects__gallery-text">Социальный проект на Youtube «Все о пластической хирургии» </div>
-                </a>
-                <a href="./book-author.html" style="background-image: url('<?= get_template_directory_uri(); ?>/images/main-page/book-author-link.png')" class="surgery-projects__gallery-link">
-                    <div class="surgery-projects__gallery-text">Автор книг о пластической хирургии и профилатике рака груди у женщин</div>
-                </a>
+                <?php foreach ($fields['fourth_block']['tiles'] as $tile) : ?>
+                    <a href="<?=$tile['link']?>" style="background-image: url('<?=$tile['image']['url']?>')"
+                        <?=($tile['target_blank'] == 1) ? 'target="_blank"' : ''?>
+                       class="surgery-projects__gallery-link">
+                        <div class="surgery-projects__gallery-text"><?=$tile['text']?></div>
+                    </a>
+                <?php endforeach; ?>
             </div>
 
         </section>
         <section class="expert-smm">
             <div class="expert-smm__width">
                 <div class="expert-smm__header">
-                    <h2 class="expert-smm__h2">Эксперт в сми</h2>
+                    <h2 class="expert-smm__h2"><?=$fields['fifth_block']['title']?></h2>
                     <div class="expert-smm__pointer pointer__wrap">
                         <div class="expert-smm__square pointer__square-dark">
                         </div>
                     </div>
                 </div>
                 <div class="expert-smm__view-link-wrap">
-                    <a class="expert-smm__view-link">посмотреть все</a>
+                    <a href="<?=$fields['fifth_block']['button_link']?>" class="expert-smm__view-link"><?=$fields['fifth_block']['button_text']?></a>
                 </div>
 
                 <div class="expert-smm__slider-wrap">
@@ -263,7 +250,7 @@ global $base;
             <div class="doctor-recommends__width">
                 <div class="doctor-recommends__header-wrap">
                     <div class="doctor-recommends__header">
-                        <h2 class="doctor-recommends__h2">Рекомендации доктора</h2>
+                        <h2 class="doctor-recommends__h2"><?=$fields['sixth_block']['title']?></h2>
                         <div class="doctor-recommends__pointer pointer__wrap">
                             <div class="doctor-recommends__square pointer__square-light">
                             </div>
