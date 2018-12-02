@@ -4,14 +4,16 @@
  * Template Name: Reviews
  */
 
-get_header();?>
+get_header();
+$fields = get_fields();
+?>
 <main class="patient-stories__page-wrap">
     <section class="recommends-page__wrap  main-page__section-gap">
         <div class="doctor-recommends">
             <div class="doctor-recommends__width">
                 <div class="doctor-recommends__header-wrap">
                     <div class="doctor-recommends__header">
-                        <h2 class="doctor-recommends__h2">истории пациентов</h2>
+                        <h2 class="doctor-recommends__h2"><?=$fields['first_block']['title']?></h2>
                         <div class="doctor-recommends__pointer pointer__wrap">
                             <div class="doctor-recommends__square pointer__square-light">
                             </div>
@@ -41,40 +43,28 @@ get_header();?>
                 </div>
 
                 <section class="doctor-reviews">
-
                     <div class="doctor-reviews__width">
                         <div class="doctor-reviews__header">
-                            <h2 class="doctor-reviews__h2">Отзывы</h2>
+                            <h2 class="doctor-reviews__h2"><?=$fields['second_block']['title']?></h2>
                             <div class="doctor-reviews__pointer pointer__wrap">
                                 <div class="doctor-reviews__square pointer__square-light">
                                 </div>
                             </div>
                         </div>
-
                         <div class="doctor-reviews__slider-wrap">
-
                             <div id="doctorReviewsSlider" class="doctor-reviews__slider slick-slider">
-                                <div class="doctor-reviews__slider-item_horiz">
-                                    <a class="horizontal-img" style="background-image: url(/dist/images/patient-stories/comment-1.png)"></a>
-                                    <a class="horizontal-img" style="background-image: url(/dist/images/patient-stories/comment-2.png)"></a>
-                                </div>
-                                <div class="doctor-reviews__slider-item_vert">
-                                    <a class="vertical-img" style="background-image: url(/dist/images/patient-stories/review-1.jpg)"></a>
-                                    <a class="vertical-img" style="background-image: url(/dist/images/patient-stories/review-2.jpg)"></a>
-                                </div>
-                                <div class="doctor-reviews__slider-item_horiz">
-                                    <a class="horizontal-img" style="background-image: url(/dist/images/patient-stories/comment-1.png)"></a>
-                                    <a class="horizontal-img" style="background-image: url(/dist/images/patient-stories/comment-2.png)"></a>
-                                </div>
-                                <div class="doctor-reviews__slider-item_vert">
-                                    <a class="vertical-img" style="background-image: url(/dist/images/patient-stories/review-3.jpg)"></a>
-                                    <a class="vertical-img" style="background-image: url(/dist/images/patient-stories/review-4.jpg)"></a>
-                                </div>
+                                <?php foreach ($fields['second_block']['slider'] as $slide) : ?>
+                                    <div class="doctor-reviews__slider-item_<?=$slide['acf_fc_layout']?>">
+                                        <a href="<?=$slide['slide'][0]['url']?>"
+                                           class="<?=($slide['acf_fc_layout']=='horiz') ? 'horizontal-img' : 'vertical-img'?>"
+                                           style="background-image: url(<?=$slide['slide'][0]['url']?>)"></a>
+                                        <a href="<?=$slide['slide'][1]['url']?>"
+                                           class="<?=($slide['acf_fc_layout']=='horiz') ? 'horizontal-img' : 'vertical-img'?>"
+                                           style="background-image: url(<?=$slide['slide'][1]['url']?>)"></a>
+                                    </div>
+                                <?php endforeach ?>
                             </div>
-
                         </div>
-
-
                     </div>
                 </section>
             </div>
@@ -89,7 +79,7 @@ get_header();?>
     <section class="patient-smi">
         <div class="patient-smi__width">
             <div class="patient-smi__header">
-                <h2 class="patient-smi__h2">Эксперт в сми</h2>
+                <h2 class="patient-smi__h2"><?=$fields['third_block']['title']?></h2>
                 <div class="patient-smi__pointer pointer__wrap">
                     <div class="patient-smi__square pointer__square-dark">
                     </div>
@@ -97,51 +87,25 @@ get_header();?>
             </div>
 
             <div class="patient-smi__view-link-wrap">
-                <a class="patient-smi__view-link">посмотреть все</a>
+                <a href="<?=$fields['third_block']['button_link']?>" class="patient-smi__view-link"><?=$fields['third_block']['button_text']?></a>
             </div>
 
             <div class="patient-smi__slider-wrap">
                 <div id="expertSmmSliderReviewsPage" class="patient-smi__slider slick-slider">
+                    <?php foreach ($fields['third_block']['slider'] as $slide) : ?>
                     <div class="patient-smi__slider-item">
-                        <a href="https://1plus1.ua" target="_blank" class="patient-smi__link">
-                            <img src="/dist/images/smm-expert/1_plus_1_logo.png">
+                        <a href="<?=$slide['link']?>" target="_blank" class="patient-smi__link">
+                            <img src="<?=$slide['image']['url']?>">
                         </a>
                     </div>
-                    <div class="patient-smi__slider-item">
-                        <a href="https://www.unian.ua" target="_blank" class="patient-smi__link">
-                            <img src="/dist/images/smm-expert/unian-logo.png">
-                        </a>
-                    </div>
-                    <div class="patient-smi__slider-item">
-                        <a href="http://www.channel5.com" target="_blank" class="patient-smi__link">
-                            <img src="/dist/images/smm-expert/logo_5_channel.png">
-                        </a>
-                    </div>
-                    <div class="patient-smi__slider-item">
-                        <a href="https://ain.ua" class="patient-smi__link">
-                            <img src="/dist/images/smm-expert/ain-logo.png">
-                        </a>
-                    </div>
-                    <div class="patient-smi__slider-item">
-                        <a href="https://1plus1.ua" class="patient-smi__link">
-                            <img src="/dist/images/smm-expert/1_plus_1_logo.png">
-                        </a>
-                    </div>
-                    <div class="patient-smi__slider-item">
-                        <a href="https://www.unian.ua" class="patient-smi__link">
-                            <img src="/dist/images/smm-expert/unian-logo.png">
-                        </a>
-                    </div>
-                    <div class="patient-smi__slider-item">
-                        <a href="http://www.channel5.com" class="patient-smi__link">
-                            <img src="/dist/images/smm-expert/logo_5_channel.png">
-                        </a>
-                    </div>
-                    <div class="patient-smi__slider-item">
-                        <a href="https://ain.ua" class="patient-smi__link">
-                            <img src="/dist/images/smm-expert/ain-logo.png">
-                        </a>
-                    </div>
+                    <?php endforeach ?>
+                    <?php foreach ($fields['third_block']['slider'] as $slide) : ?>
+                        <div class="patient-smi__slider-item">
+                            <a href="<?=$slide['link']?>" target="_blank" class="patient-smi__link">
+                                <img src="<?=$slide['image']['url']?>">
+                            </a>
+                        </div>
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>
@@ -162,8 +126,9 @@ get_header();?>
                 <span class="request-button__text request-button__text-dark"><?=$base['button_text_register_for_appointment']?></span>
             </div>
         </div>
-
-
     </section>
 </main>
+    <script>
+        var galleryCollection = <?=json_encode($fields['first_block']['slider'])?>;
+    </script>
 <?php get_footer();?>

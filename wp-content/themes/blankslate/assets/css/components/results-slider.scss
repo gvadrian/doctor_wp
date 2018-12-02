@@ -1,0 +1,326 @@
+.surgery-results {
+    position: relative;
+    z-index: 2;
+    padding: 0 1.5rem;
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    &__header {
+        position: relative;
+    }
+    &__h2 {
+        color: $header-color;
+        font-family: $regular;
+        letter-spacing: 0.5px;
+        font-weight: 400;
+        line-height: 28px;
+        padding-left: 3.3rem;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
+    &__pointer.pointer__wrap {
+        left: 0;
+    }
+    &__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1.8rem 0;
+    }
+    &__item {
+        padding: 0.5rem 0;
+    }
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(50vw - 2.75rem);
+        height: calc(50vw - 2.75rem);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: $small-img-grad;
+            z-index: 3;
+        }
+    }
+    &__link-text {
+        position: relative;
+        text-align: center;
+        z-index: 4;
+        color: $white-1;
+        font-family: $light;
+        font-size: 1.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    &__right {
+        margin: 0 -1.5rem;
+    }
+    &__wrap-slider {
+        height: 75.1vw;
+        width: 100%;
+    }
+    &__slider {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        &-item{
+            &:focus{
+                outline: none;
+            }
+        }
+
+        .slick-dots {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            bottom: 2rem;
+            list-style: none;
+            li {
+                width: 0.8rem;
+                height: 1.2rem;
+                display: flex;
+                align-items: center;
+                margin: 0 0.45rem;
+            }
+            [type='button'] {
+                outline: none;
+                width: 0.8rem;
+                height: 0.8rem;
+                border: none;
+                background-color: $dark-blue-04;
+                overflow: hidden;
+                color: transparent;
+                border: 1px solid #afafaf;
+            
+            }
+            li.slick-active {
+                width: 1.2rem;
+                height: 1.2rem;
+                [type='button'] {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    background-color: $dark-blue-08;
+                }
+            }
+        }
+    }
+    &__img {
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .surgery-results {
+        padding: 0 2.5rem 3rem;
+        &__pointer.pointer__wrap {
+            left: 2rem;
+        }
+        &__h2 {
+            padding-left: 6rem;
+            font-size: 2rem;
+            letter-spacing: 0.56px;
+            line-height: 28px;
+        }
+        &__item {
+            padding: 0.75rem 0;
+        }
+        &__link {
+            width: calc(33vw - 3rem);
+            height: calc(33vw - 3rem);
+        }
+        &__link-text {
+            font-size: 2rem;
+            letter-spacing: 0.56px;
+        }
+        &__right {
+            margin: 0 -2.5rem;
+        }
+
+        &__slider {
+            .slick-dots {
+                li {
+                    margin: 0 1rem;
+                }
+                
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .surgery-results {
+        &__right {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__img{
+            width: 100%;
+            height: 100%;
+        }
+
+        &__wrap-slider {
+            height: 50rem;
+            width: 66.57rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .surgery-results {
+        max-width: 1106px;
+        padding: 5rem 0 3rem;
+        margin: 0 auto;
+        &__pointer.pointer__wrap {
+            left: 0;
+        }
+        &__wrap {
+            display: flex;
+            flex-direction: row;
+        }
+        &__h2 {
+            padding: 2rem;
+        }
+        &__list {
+            justify-content: flex-start;
+        }
+        &__item {
+            padding: 0.6rem 1.2rem 0.6rem 0;
+        }
+        &__link {
+            width: 21.5rem;
+            height: 18.1rem;
+            padding: 0 1rem;
+        }
+
+        &__h2{
+            padding-left: 3.3rem;
+        }
+
+        &__h2,
+        &__link-text {
+            font-size: 2.4rem;
+            line-height: 28px;
+            letter-spacing: 0.67px;
+        }
+        &__left,
+        &__right {
+            position: relative;
+        }
+        &__left {
+            flex: 0 0 49%;
+            z-index: 4;
+        }
+        &__right {
+            flex: 0 0 63.4rem;
+            margin: 0;
+            left: -7rem;
+            z-index: 3;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+        }
+        &__slider {
+            height: 54.5rem;
+            top: 4.5rem;
+            box-shadow: none;            
+
+            &.slick-slider.slick-vertical {
+                .slick-slide {
+                    height: 47.6rem;
+                    border: none;
+                }
+            }
+            .slick-dots {
+                bottom: 3.5rem;
+                height: 2rem;
+                width: 100%;
+                right: 0rem;
+                flex-direction: row;
+                justify-content: center;
+                li {
+                    margin: 0 1rem;
+                }
+                [type='button']:hover {
+                    cursor: pointer;
+                }
+            }
+            .slick-arrow {
+                position: absolute;
+                z-index: 5;
+                border: none;
+                color: transparent;
+                background-color: transparent;
+                background-position: center;
+                background-repeat: no-repeat;
+                display: inline-block;
+                width: 9px;
+                height: 101px;
+                outline: 1px solid transparent;
+
+            }
+            .slick-arrow.slick-next {
+                bottom: 2rem;
+                width: 10rem;
+                height: 6rem;
+                right: 0;
+                background-image: url('../images/recommends-page/arrow-horiz_right-dark-lg.svg');
+
+                cursor: pointer;
+                &:hover {
+                    background-image: url('../images/recommends-page/arrow-horiz-hov_right-dark-lg.svg');
+                }
+            }
+            .slick-arrow.slick-prev {
+                bottom: 2rem;
+                width: 10rem;
+                height: 6rem;
+                left: 0;
+                background-image: url('../images/recommends-page/arrow-horiz_left-dark-lg.svg');
+                cursor: pointer;
+
+                &:hover {
+                    background-image: url('../images/recommends-page/arrow-horiz-hov_left-dark-lg.svg');
+                }
+                
+            }
+            &.slick-initialized .slick-slide {
+                display: block;
+            }
+        }
+        &__img {
+            width: 100%;
+            height: 47.6rem;
+        }
+
+        &__wrap-slider{
+            position: relative;
+            width: 100%;
+            height: 56.8rem;
+            bottom: 2.3rem;
+        }
+    }
+}

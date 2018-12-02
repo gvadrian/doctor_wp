@@ -1,0 +1,326 @@
+.news__about {
+    position: relative;
+}
+
+.news-about {
+    &__wrap {
+        position: relative;
+        z-index: 2;
+    }
+    &__video {
+        height: auto;
+        margin-top: 6rem;
+        position: relative;
+    }
+    &__video-inner {
+        width: 100%;
+        height: auto;
+        background-image: $section-bg-grad;
+    }
+    &__head-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__headline {
+        width: 100%;
+        height: 16rem;
+        display: flex;
+        flex-direction: row;
+        padding: 1.5rem;
+    }
+    &__one {
+        cursor: pointer;
+        display: block;
+        width: 1.4rem;
+        height: 1.4px;
+        background-color: $white-04;
+        transform: rotate(-50deg);
+    }
+    &__too {
+        display: block;
+        cursor: pointer;
+        margin-top: 8px;
+        width: 1.32rem;
+        height: 1.4px;
+        background-color: $white-04;
+        transform: rotate(50deg);
+    }
+    &__second {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        .icon__back {
+            display: none;
+        }
+    }
+    &__second-text {
+        color: $white-1;
+        font-family: $regular;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 2.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.67px;
+    }
+    &__second-date {
+        line-height: 3.3rem;
+        color: $white-06;
+        font-family: $regular;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.33px;
+    }
+    &__btn {
+        padding-top: 4.2rem;
+    }
+    &__play {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    &__player {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 58vw;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-image: $video-overlay-grad;
+            opacity: 1;
+        }
+        &-poster {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-ren {
+                cursor: pointer;
+                position: absolute;
+                z-index: 5;
+                display: block;
+                font-size: 0px;
+                width: 6rem;
+                height: 6rem;
+                position: absolute;
+                background-image: url('../images/about-page/play_button_sm.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+    &__play-text {
+        padding: 2rem 1.5rem 0 1.5rem;
+    }
+    &__play-text p {
+        color: $p-color-1;
+        font-family: $light;
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 2.2rem;
+        letter-spacing: 0.28px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .news-about {
+        &__wrap {
+            position: relative;
+            z-index: 2;
+        }
+        &__video {
+            height: auto;
+            margin-top: 13rem;
+            position: relative;
+        }
+
+        &__headline {
+            width: 100%;
+            height: 16rem;
+            display: flex;
+            padding: 2.5rem;
+        }
+        &__second {
+            .icon__back {
+                display: flex;
+            }
+        }
+        &__second-text {
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 2.8rem;
+        }
+        &__second{
+            .icon__back{
+                padding-top: 0.5rem;
+            }
+        }
+        &__second-date {
+            line-height: 3.3rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 2.8rem;
+            letter-spacing: 0.39px;
+            display: flex;
+            padding-left: 3.5rem;
+        
+        }
+        &__btn {
+            padding-top: 4.2rem;
+        }
+        &__play {
+            width: 100%;
+            height: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        &__player {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            height: 54.42vw;
+
+            &-poster{
+                &-ren{
+                    width: 8rem;
+                    height: 8rem;
+                    background-image: url('../images/about-page/play_button_md.svg');
+                }
+            }
+        }
+        &__play_on {
+            width: 100%;
+            height: auto;
+        }
+        &__play-text {
+            padding: 2.5rem 2.5rem 0rem 2.5rem;
+        }
+        &__play-text p {
+            letter-spacing: 0.28px;
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 2.4rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .news-about {
+        .icon__back {
+            padding-top: 1rem;
+        }
+        &__wrap {
+            position: relative;
+            z-index: 2;
+        }
+        &__play {
+            max-width: 1106px;
+            margin: 0 auto;
+        }
+        &__video {
+            width: 100%;
+            height: auto;
+            margin-top: 11rem;
+            padding-top: 0;
+            position: relative;
+        }
+        &__video-inner {
+            width: 100%;
+            height: 40rem;
+            display: flex;
+            justify-content: center;
+        }
+        &__headline {
+            width: 1106px;
+            display: flex;
+            flex-direction: row;
+            height: 20rem;
+            padding-left: 0;
+        }
+        &__second{
+            .icon__back{
+                padding-top: 0.95rem;
+                &:hover{
+                    svg{
+                        & *{
+                            fill: $white-1;
+                            opacity: 1;
+                        }
+                        
+                    }
+                }
+            }
+        }
+        &__second-text {
+            font-size: 2.4rem;
+            font-weight: 400;
+            line-height: 3.8rem;
+            max-width: 76rem;
+        }
+        &__second-date {
+            line-height: 3.3rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 2.8rem;
+            padding-left: 4.3rem;
+        }
+        &__btn {
+            padding-top: 4.2rem;
+        }
+        &__play {
+            margin-top: -20rem;
+            width: 100%;
+            height: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin-bottom: 4.5rem;
+        }
+        &__player {
+            width: 100%;
+            margin: 0 auto;
+            padding-left: 0rem;
+            padding-right: 0rem;
+            height: 60rem;
+            &-poster {
+                &-ren {
+                    width: 8rem;
+                    height: 8rem;
+                    background-image: url('../images/about-page/play_button_md.svg');
+                    &:hover {
+                        animation: pulse 1s infinite;
+                    }
+                }
+            }
+        }
+        &__play_on {
+            width: 100%;
+            height: auto;
+        }
+        &__play-text {
+            padding: 2.5rem 0 0 0;
+            max-width: 1106px;
+            margin: 0 auto;
+        }
+        &__play-text *{
+            letter-spacing: 0.28px;
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 2.4rem;
+        }
+    }
+}

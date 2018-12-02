@@ -1,0 +1,39 @@
+.pointer{
+    &__square{
+        &-light, &-dark{
+            position: relative;
+            width: 0.7rem;
+            height: 0.7rem;
+            
+            &::before{
+                content: "";
+                position: absolute;
+                display: block;
+                right: 0.7rem;
+                height: 1px;
+                width: 100rem;
+                top: 50%;
+                transform: translateY(-100%);
+            }
+        }
+
+        &-light{
+            background-color: $white-04;
+            
+            &::before{
+                background-color: $white-04;
+            }
+
+        }
+
+        &-dark{
+            background-color: $medium-blue-04;
+            
+            &::before{
+                background-color: $medium-blue-04;
+            }
+
+        }
+        
+    }
+}

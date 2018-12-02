@@ -7,6 +7,11 @@
 get_header();
 $fields = get_fields();
 global $base;
+$args_operations = [
+    'post_type' => 'before_after',
+    'numberposts' => 0,
+];
+$operations = get_posts($args_operations);
 ?>
 <main>
     <section class="main-head">
@@ -39,7 +44,7 @@ global $base;
                 </div>
                 <div class="main-head__scroll">
                     <div class="main-head__scroll-wrap">
-                        <div class="main-head__scroll-text">прокрутите колесико мышки</div>
+                        <div class="main-head__scroll-text"><?=$fields['first_block']['scroll_text']?></div>
                         <div>
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                  width="9.125px" height="101.119px" viewBox="0.875 1.253 9.125 101.119" enable-background="new 0.875 1.253 9.125 101.119"
@@ -101,57 +106,33 @@ global $base;
             <div class="surgery-results__wrap">
                 <div class="surgery-results__left">
                     <div class="surgery-results__header">
-                        <h2 class="surgery-results__h2">результаты работ</h2>
+                        <h2 class="surgery-results__h2"><?=$fields['third_block']['title']?></h2>
                         <div class="surgery-results__pointer pointer__wrap">
                             <div class="surgery-results__square pointer__square-dark">
                             </div>
                         </div>
                     </div>
                     <div class="surgery-results__list">
-                        <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" href="./procedure-page.html" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/nose.jpg')">
-                                <span class="surgery-results__link-text">Нос</span>
-                            </a>
-                        </div>
-                        <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/breast.jpg')">
-                                <span class="surgery-results__link-text">Грудь</span>
-                            </a>
-                        </div>
-                        <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/body.jpg')">
-                                <span class="surgery-results__link-text">Тело</span>
-                            </a>
-                        </div>
-                        <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/face.jpg')">
-                                <span class="surgery-results__link-text">Лицо</span>
-                            </a>
-                        </div>
-                        <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/aesthetic_medicine.jpg')">
-                                <span class="surgery-results__link-text">Эстетическая медицина</span>
-                            </a>
-                        </div>
-                        <div class="surgery-results__item">
-                            <a href="./procedure-page.html" class="surgery-results__link" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/intimate_plastic.jpg')">
-                                <span class="surgery-results__link-text">Интимная пластика</span>
-                            </a>
-                        </div>
+                        <?php foreach ($operations as $item) : ?>
+                            <?php $operation = get_fields($item->ID); ?>
+                            <div class="surgery-results__item">
+                                <a href="<?= get_permalink($item) ?>" class="surgery-results__link"
+                                   style="background-image: url('<?= $operation['preview']['url'] ?>')">
+                                    <span class="surgery-results__link-text"><?= $operation['title'] ?></span>
+                                </a>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
                 <div class="surgery-results__right">
                     <div class="surgery-results__wrap-slider">
                         <div id="surgeryResultsSliderMain" class="surgery-results__slider">
-                            <div class="surgery-results__slider-item">
-                                <div class="surgery-results__img" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/img2.jpg')"></div>
-                            </div>
-                            <div class="surgery-results__slider-item">
-                                <div class="surgery-results__img" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/img1.jpg')"></div>
-                            </div>
-                            <div class="surgery-results__slider-item">
-                                <div class="surgery-results__img" style="background-image: url('<?=get_template_directory_uri();?>/images/surgery-results/img3.jpg')"></div>
-                            </div>
+                            <?php foreach ($fields['third_block']['slider'] as $slide) : ?>
+                                <div class="surgery-results__slider-item">
+                                    <a class="surgery-results__img"
+                                       style="background-image: url('<?= $slide['url'] ?>')"></a>
+                                </div>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>
@@ -181,7 +162,6 @@ global $base;
                     </a>
                 <?php endforeach;?>
             </div>
-
         </section>
         <section class="expert-smm">
             <div class="expert-smm__width">
@@ -195,56 +175,27 @@ global $base;
                 <div class="expert-smm__view-link-wrap">
                     <a href="<?=$fields['fifth_block']['button_link']?>" class="expert-smm__view-link"><?=$fields['fifth_block']['button_text']?></a>
                 </div>
-
                 <div class="expert-smm__slider-wrap">
                     <div id="expertSmmSliderMain" class="expert-smm__slider slick-slider">
-                        <div class="expert-smi__slider-item">
-                            <a href="https://1plus1.ua" target="_blank" class="expert-smi__link-wrap">
-                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/1_plus_1_logo.png">
-                            </a>
-                        </div>
-                        <div class="expert-smi__slider-item">
-                            <a href="https://www.unian.ua" target="_blank" class="expert-smi__link-wrap">
-                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/unian-logo.png">
-                            </a>
-                        </div>
-                        <div class="expert-smi__slider-item">
-                            <a href="http://www.channel5.com" target="_blank" class="expert-smi__link-wrap">
-                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/logo_5_channel.png">
-                            </a>
-                        </div>
-                        <div class="expert-smi__slider-item">
-                            <a href="https://ain.ua" class="expert-smi__link-wrap">
-                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/ain-logo.png">
-                            </a>
-                        </div>
-                        <div class="expert-smi__slider-item">
-                            <a href="https://1plus1.ua" class="expert-smi__link-wrap">
-                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/1_plus_1_logo.png">
-                            </a>
-                        </div>
-                        <div class="expert-smi__slider-item">
-                            <a href="https://www.unian.ua" class="expert-smi__link-wrap">
-                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/unian-logo.png">
-                            </a>
-                        </div>
-                        <div class="expert-smi__slider-item">
-                            <a href="http://www.channel5.com" class="expert-smi__link-wrap">
-                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/logo_5_channel.png">
-                            </a>
-                        </div>
-                        <div class="expert-smi__slider-item">
-                            <a href="https://ain.ua" class="expert-smi__link-wrap">
-                                <img src="<?=get_template_directory_uri();?>/images/smm-expert/ain-logo.png">
-                            </a>
-                        </div>
+                        <?php foreach ($fields['fifth_block']['slider'] as $slide) : ?>
+                            <div class="expert-smi__slider-item">
+                                <a href="<?=$slide['link']?>" target="_blank" class="expert-smi__link-wrap">
+                                    <img src="<?=$slide['image']['url']?>">
+                                </a>
+                            </div>
+                        <?php endforeach ?>
+                        <?php foreach ($fields['fifth_block']['slider'] as $slide) : ?>
+                            <div class="expert-smi__slider-item">
+                                <a href="<?=$slide['link']?>" target="_blank" class="expert-smi__link-wrap">
+                                    <img src="<?=$slide['image']['url']?>">
+                                </a>
+                            </div>
+                        <?php endforeach ?>
                     </div>
-
                 </div>
             </div>
         </section>
     </div>
-
     <section class="recommends-page__wrap main-page__section-gap">
         <section class="doctor-recommends">
             <div class="doctor-recommends__width">
@@ -257,14 +208,12 @@ global $base;
                         </div>
                     </div>
                 </div>
-
                 <div class="recommends-slider__wrap">
                     <div class="synch-carousels">
                         <div class="left gallery__wrap">
                             <div id="recommendsSliderPreviewsMain" class="gallery">
                             </div>
                         </div>
-
                         <div class="right gallery__wrap">
                             <div id="recommendsSliderVideosMain" class="gallery2">
                             </div>
@@ -274,7 +223,6 @@ global $base;
                                 <button class="arrow-right">
                                 </button>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -287,4 +235,7 @@ global $base;
         </div>
     </section>
 </main>
+    <script>
+        var galleryCollection = <?=json_encode($fields['sixth_block']['slider'])?>;//эта переменная используется в подключаемом в футере скрипте
+    </script>
 <?php get_footer();?>

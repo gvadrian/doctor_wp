@@ -2,15 +2,12 @@
 
 (function () {
   $(document).ready(function () {
-    $('.procedure-slider__slider').slick({
+    $('#procedureResulstSlider').slick({
       dots: true,
-      // centerMode: true,
-      // fade: true,
       arrows: true,
-      // autoplay:true,
-      // autoplaySpeed:5000,
-      vertical: true,
+      vertical: false,
       dragable: false,
+      fade: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: true,
@@ -23,6 +20,9 @@
           vertical: false
         }
       }]
+    });
+    $('#procedureResulstSlider').slickLightbox({
+      itemSelector: 'a.surgery-results__img'
     });
   });
 })();

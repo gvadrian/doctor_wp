@@ -1,0 +1,131 @@
+
+/* Library classes end*/
+
+.request-consultation__popup {
+    width: 100%;
+    
+    /* General Popup Styles */
+    input {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 1px solid $medium-blue-04;
+        font-size: 1.4rem;
+        font-weight: 400px;
+        font-family: $regular;
+        color: $p-color-1;
+        letter-spacing: 0.39px;
+
+        &:active {
+            outline: none;
+        }
+    }
+    input::placeholder {
+        font-size: 1.2rem;
+        font-weight: 400px;
+        font-family: $regular;
+        color: $links-color;
+        letter-spacing: 0.39px;
+    }
+
+    .popup {
+        &__wrap {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            z-index: 2;
+            padding: 0 1.5rem 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: $white-1;
+        }
+
+        &__more.more{
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+
+        &__header {
+            color: $header-color;
+            font-family: $regular;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.39px;
+        }
+        &__header-wrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 3.5rem 0;
+            width: 100%;
+            align-items: center;
+        }
+        &__close-icon {
+            cursor: pointer;
+            display: flex;
+            width: 1.8rem;
+            height: 1.6rem;
+            position: relative;
+            right: 1.5rem;
+        }
+        &__form-wrap {
+            width: 100%;
+        }
+        &__input-wrap {
+            width: 100%;
+            padding-bottom: 4.5rem;
+
+            &:last-child{
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .request-consultation__popup {
+        width: auto;
+        position: absolute !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        /* General Popup Styles */
+        input {
+            font-size: 1.4rem;
+            letter-spacing: 0.39px;
+        }
+        input::placeholder {
+            font-size: 1.4rem;
+            letter-spacing: 0.39px;
+        }
+        .popup {
+            &__wrap {
+                padding: 0 3.5rem 4rem;
+                width: 51rem;
+                height: 50rem;
+            }
+            &__header {
+                font-size: 1.8rem;
+                letter-spacing: 0.5px;
+            }
+            &__header-wrap {
+                padding: 4rem 0 0;
+            }
+            &__close-icon {
+                right: 0;
+            }
+            &__input-wrap {
+                padding-bottom: 4.5rem;
+                &:last-child{
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}

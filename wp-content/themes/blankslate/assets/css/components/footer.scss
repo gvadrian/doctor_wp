@@ -1,0 +1,380 @@
+.footer{
+
+    &__width{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__wrap{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        color: $links-video;
+        font-size: 1rem;
+        padding: 1.5rem;
+        font-family: $regular;
+        letter-spacing: 0.28px;
+        background-color: $white-1;
+        position: relative;
+        z-index: 3;
+
+        a{
+            display: inline-block;
+            text-decoration: none;
+        }
+    }
+
+    &__link-group1, &__link-group2{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        line-height: 2.2rem;
+        &_item{
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            color: $links-video;
+        }
+    }
+
+    &__link-group2{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        line-height: 2.2rem;
+        &_item{
+            &-school{
+                line-height: 3.2rem;
+                color: $links-video;
+            }
+        }
+    }
+
+    &__contact{
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding-top: 2.25rem;
+        &_item{
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            color: $links-video;
+        }
+    }
+
+    &__logo{
+        display: flex;
+        width: 20%;
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 2.25rem;
+    }
+
+    &__links-social, &__request-button, &__copyright{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__links-social{
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        &_link{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            &-youtube, &-instagram, &-facebook, &-wiki, &-telegram{
+                height: 1.4rem;
+                width: 1.4rem;
+            }
+        }
+    }
+
+    &__links-societies{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+
+        a{
+            width: 50%;
+            display: flex;
+            align-items: center;
+        }
+
+        &_breast-logo, &_anacosmo-logo, &_icamps-logo, &_ukrplastic-logo{
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+
+        &_breast-logo, &_anacosmo-logo{
+            margin-bottom: 3rem;
+        }
+
+        &_breast-logo{
+            height: 1.9rem;
+        }
+
+        &_anacosmo-logo{
+            height: 2.25rem;
+        }
+
+        &_anacosmo-logo, &_ukrplastic-logo{
+            width: 100%;
+            background-position: right center;
+        }
+
+        &_icamps-logo{
+            height: 4.5rem;
+        }
+
+        &_ukrplastic-logo{
+            height: 3.8rem;
+        }
+    }
+
+    &__request-link{
+        cursor: pointer;
+    }
+
+    &__request-button{
+        padding-bottom: 3rem;
+
+        a{
+            padding: 1rem 1.5rem;
+            border: 1px solid $dark-blue-06;
+            color: $dark-blue-06;
+            transition: color .1s ease-in-out .1s, background-color .5s ease-in .2s; 
+        }
+    }
+
+    &__copyright{
+        padding-top: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer{
+
+        &__wrap{
+            padding: 2.5rem;
+            position: relative;
+        }
+        
+        &__link-group1, &__link-group2{
+            flex-direction: row;
+            justify-content: flex-end;
+            width: 65%;
+
+            &_item, &_item-school {
+                padding-left: 1.4rem;
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+                line-height: 22px;
+            }
+
+        }
+
+        &__link-group1{
+            order: 3;
+            position: absolute;
+            flex-direction: row;
+            justify-content: flex-end;
+            right: 2.5rem;
+            align-items: center;
+        }
+
+        &__link-group2{
+            order: 4;
+            position: absolute;
+            right: 2.5rem;
+            top: 5.3rem;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        &__logo{
+            width: calc(100% / 3);
+            display: flex;
+            justify-content: flex-start;
+            padding-top: 0;
+        }
+
+        &__links-social{
+            width: calc(100% / 3);
+            padding-top: 0;
+            padding-bottom: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            &_link:last-child{
+                padding-right: 0;
+            }
+        }
+
+        &__copyright{
+            position: absolute;
+            width: 65%;
+            display: flex;
+            justify-content: flex-end;
+            right: 2.5rem;
+            top: 7.3rem;
+        }
+
+        &__contact{
+            order: 1;
+            padding-top: 0;
+
+            &_item {
+                line-height: 22px;
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+            }
+        }
+
+        &__logo{
+            order: 6;
+        }
+
+        &__request-button{
+            padding-bottom: 4rem;
+            padding-top: 4rem;
+            order: 7;
+            width: calc(100% / 3);
+    
+            a{
+                padding: 1.2rem 2.5rem;
+            }
+        }
+
+        &__links-social{
+            order: 8;
+        }
+
+        &__links-societies{
+            width: 100%;
+            order: 9;
+
+            a{
+                width: 25%;
+            }
+
+            &_anacosmo-logo, &_icamps-logo{
+                background-position: center;
+            }
+
+            &_breast-logo, &_anacosmo-logo{
+                margin-bottom: 0;
+            }
+        }
+
+        &__copyright{
+            order: 5;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .footer{
+        &__width{
+            max-width: 1106px;
+            width: 100%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        &__wrap{
+            padding-top: 0;
+        }
+
+        &__link-group1{
+            order: 2;
+            width: 60%;
+            justify-content: flex-start;
+            top: 2rem;
+            left: 10rem;
+
+            &_item{
+                padding-left: 0;
+                padding-right: 1.4rem;
+            }
+        }
+
+        &__link-group2{
+            order: 3;
+            width: 60%;
+            justify-content: flex-start;
+            left: 10rem;
+            top: 5.3rem;
+
+            &_item, &_item-school{
+                padding-left: 0;
+                padding-right: 1.4rem;
+            }  
+        }
+
+        &__contact{
+            flex-direction: row;
+            order: 6;
+            width: 60%;
+            justify-content: flex-start;
+            left: -11rem;
+            top: 12rem;
+            position: relative;
+
+            &_item{
+                padding-right: 1.4rem;
+            }
+        }
+
+        &__logo{
+            order: 1;
+            width: 10%;
+            position: relative;
+            top: 2rem;
+        }
+
+        &__links-social{
+            width: 100%;
+            order: 5;
+            position: absolute;
+            top: 8.75rem;
+            padding-top: 0.5rem;
+        }
+
+        &__request-button{
+            justify-content: flex-end;
+            width: 30%;
+            order: 4;
+            position: absolute;
+            right: 0;
+            padding-top: 0;
+            top: 3rem;
+            padding-bottom: 0;
+
+            a:hover{
+                background-color: $dark-blue-06;
+                color: $white-1;
+            }
+        }
+
+        &__links-societies{
+            margin-top: 12.75rem;
+        }
+
+        &__copyright{
+            width: 30%;
+            right: 0;
+            align-items: center;
+            top: 12rem;
+            height: 2.7rem;
+            padding-top: 0;
+        }
+    }
+
+}

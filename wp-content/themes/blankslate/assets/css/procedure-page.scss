@@ -1,0 +1,497 @@
+.pointer{
+    &__wrap{
+        display: flex;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -107rem;
+        transition: left 0.2s ease-in;
+    }
+}
+
+.procedure-head {
+    width: 100%;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: $section-bg-grad;
+
+
+    &__title {
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        align-items: center;
+    }
+
+    &__title-text{
+        color: $white-1;
+        font-family: $light;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+    }
+
+    &__text-wrap{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: column;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__list-item{
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        transition: padding 0.2s ease-in;
+
+        &_link{
+            display: flex;
+            color: $white-06;
+            font-family: $light;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            text-transform: none;
+            cursor: pointer;
+
+        }
+
+        &.active{
+            padding-left: 5.4rem;
+        }
+
+        &.active .pointer__wrap{
+            left: 2rem;
+        }
+
+        &.active &_link{
+            color: $white-1;
+            font-weight: 500;
+            font-family: $regular;
+        }
+
+    }
+}
+
+.procedure-results{
+    &__wrap-slider{
+        z-index: 3;
+        width: 100%;
+        position: relative;
+    }
+}
+
+// .procedure-slider{
+//     width: 100%;
+
+//     &__wrap{
+//         width: 100%;
+//         height: 92.5vw;
+//         max-height: 92.5vw;
+//         position: relative;
+//     }
+
+//     &__slider {
+//         position: relative;
+//         overflow: hidden;
+//         .slick-dots {
+//             position: absolute;
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: center;
+//             width: 100%;
+//             bottom: 1rem;
+//             list-style: none;
+//             li {
+//                 width: 0.8rem;
+//                 height: 1.2rem;
+//                 display: flex;
+//                 align-items: center;
+//                 margin: 0 0.45rem;
+//             }
+//             [type='button'] {
+//                 outline: none;
+//                 width: 0.8rem;
+//                 height: 0.8rem;
+//                 border: none;
+//                 background-color: $white-04;
+//                 overflow: hidden;
+//                 color: transparent;
+//             }
+//             li.slick-active {
+//                 width: 1.2rem;
+//                 height: 1.2rem;
+//                 [type='button'] {
+//                     width: 1.2rem;
+//                     height: 1.2rem;
+//                     background-color: $white-08;
+//                 }
+//             }
+//         }
+//     }
+//     &__img {
+//         height: 100%;
+//         background-repeat: no-repeat;
+//         background-size: cover;
+//         background-position: center;
+//         position: relative;
+//         &::after {
+//             content: '';
+//             position: absolute;
+//             width: 100%;
+//             height: 100%;
+//             background-color: $slider-overlay;
+//         }
+//     }
+
+// }
+
+.content {
+    position: relative;
+}
+
+.procedure-info{
+    position: relative;
+
+    .request-block{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 2;
+    }
+
+    &__wrap{
+        width: 100%;
+        padding: 1.7rem 1.5rem 0rem 1.5rem;
+        color: $p-color-1;
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: 0.28px;
+        position: relative;
+        z-index: 2;
+        // p{
+        //     margin-bottom: 3rem;
+        // }
+
+        // p:last-child{
+        //     margin-bottom: 0rem;
+        // }
+    }
+
+    &__wrap * {
+        margin-bottom: 3rem;
+
+        &:last-child{
+            margin-bottom: 0rem;
+        }
+    }
+
+    &__width{
+        position: relative;
+        padding-bottom: 9.6rem;
+    }
+
+    &__text-blocker{
+        display: none;
+        margin-bottom: 0;
+    }
+}
+
+.icon{
+    &__back{
+        padding-right: 2.5rem;
+        cursor: pointer;
+
+        svg{
+            width: 1rem;
+            height: 1.8rem;
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .procedure-head {
+        margin-top: 13rem;
+
+        &__title {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        &__title-text{
+            font-size: 2rem;
+        }
+
+        &__text-wrap{
+            padding: 2.5rem 2.5rem 3.5rem 2.5rem;
+        }
+
+        &__list-item{
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            line-height: 28px;
+        }
+
+        &__list-item{
+            &_link{
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .procedure-info{
+
+        &__wrap{
+            width: 100%;
+            padding: 5.7rem 2.5rem 0rem 2.5rem;
+            font-size: 1.2rem;
+        }
+
+        &__wrap *{
+            margin-bottom: 2rem;
+        }
+
+        &__text-blocker{
+            margin-bottom: 0;
+        }
+
+        &__width{
+            padding-bottom: 12.4rem;
+        }
+
+    }
+
+    .icon{
+        &__back{
+            padding-right: 2.5rem;
+        }
+    }
+    
+    
+}
+
+@media screen and (min-width: 1024px) {
+
+    .procedure-slider{
+
+        &__wrap{
+            height: 45rem;
+            max-height: 45rem;
+        }
+
+        &__slider {
+            max-height: 45rem;
+            &.slick-slider.slick-vertical {
+                .slick-slide {
+                    max-height: 45rem;
+                }
+            }
+            &.slick-initialized .slick-slide {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+        &__img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+@media screen and (min-width: 1200px) {
+
+    #procedureResulstSlider.surgery-results__slider{
+        top: 0;
+    }
+    .procedure-head {
+        margin-top: 11rem;
+        height: 40rem;
+
+        &__width {
+            width: 100%;
+            max-width: 1106px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        &__title{
+            padding-bottom: 4rem;
+            padding-top: 3.6rem;
+        }
+
+        &__title-text{
+            font-size: 2.4rem;
+        }
+
+        &__text-wrap{
+            padding: 5.5rem 0rem 6.5rem 0rem;
+        }
+
+        &__list-item {
+
+            &_link{
+                font-size: 1.8rem;
+            }
+
+            // &:hover {
+            //     padding-left: 5.4rem;
+            // }
+
+            // &:hover .pointer__wrap{
+            //     left: 2rem;
+            // }
+
+            &:hover &_link {
+                color: $white-1;
+                font-weight: 400;
+                font-family: $medium;
+            }
+        }
+    }
+
+    .procedure-slider{
+        position: absolute;
+        top: 4.4rem;
+        right: 0rem;
+        width: auto;
+        z-index: 3;
+
+        &__wrap{
+            width: 67.8rem;
+            height: 70rem;
+            max-height: 70rem;
+        }
+
+        &__slider {
+            max-height: 70rem;
+            &.slick-slider.slick-vertical {
+                .slick-slide {
+                    height: 70rem;
+                    max-height: 70rem;
+                }
+            }
+            .slick-dots {
+                top: 0;
+                height: 70rem;
+                width: 2rem;
+                right: 4.7rem;
+                flex-direction: column;
+                align-items: center;
+                li {
+                    margin: 1rem 0;
+                }
+                [type='button']:hover {
+                    cursor: pointer;
+                }
+            }
+            .slick-arrow {
+                position: absolute;
+                right: 5.3rem;
+                z-index: 5;
+                border: none;
+                color: transparent; // height: 10.1rem;
+                // width: 0.9rem;
+                background-color: transparent;
+                background-size: 101px auto;
+                background-repeat: no-repeat;
+                display: inline-block;
+                background: url('../images/surgery-results/arrow-vertical_sprite.png') no-repeat;
+                overflow: hidden;
+                text-indent: -9999px;
+                text-align: left;
+                width: 9px;
+                height: 101px;
+                outline: 1px solid transparent;
+            }
+            .slick-arrow.slick-next {
+                bottom: 6rem;
+                background-position: -0px -101px;
+                cursor: pointer;
+                &:hover {
+                    background-position: -9px -101px;
+                }
+            }
+            .slick-arrow.slick-prev {
+                top: 6rem;
+                background-position: -0px -0px;
+                cursor: pointer;
+                &:hover {
+                    background-position: -9px -0px;
+                }
+            }
+            &.slick-initialized .slick-slide {
+                display: block;
+            }
+        }
+        &__img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .procedure-info{
+        &__wrap{
+            padding-left: 0rem;
+            padding-right: 0rem;
+            font-size: 1.4rem;
+        }
+
+        &__text-blocker{
+            display: block;
+            width: 68.8rem;
+            height: 16rem;
+            float: right;
+        }
+
+        &__width {
+            width: 100%;
+            max-width: 1106px;
+            margin: 0 auto;
+            padding-bottom: 16.4rem;
+        }
+
+    }
+
+    .procedure-results{
+        &__wrap-slider{
+            width: 63.4rem;
+            position: absolute;
+            top: 4.5rem;
+            right: 0;
+        }
+    }
+
+    .icon{
+        &__back{
+            padding-right: 3.3rem;
+            &:hover{
+                svg{
+                    & *{
+                        fill: $white-1;
+                        opacity: 1;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

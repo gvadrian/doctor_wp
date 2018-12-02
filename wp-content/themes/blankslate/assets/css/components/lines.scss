@@ -1,0 +1,34 @@
+.lines { 
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    padding: 0 1.5rem;
+    z-index: 1;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    &__item{
+        background-image: linear-gradient($page-grid-03 60%, transparent 0%);
+        background-position: left;
+        background-size: 1px 20px;
+        background-repeat: repeat-y;
+        width: 1px;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width:768px){
+    .lines {
+        padding: 0 2.5rem;
+    }
+}
+@media screen and (min-width:1200px){
+    .lines {
+        padding: 0;
+        left: 50%;
+        max-width: 1106px;
+        transform: translateX(-50%);
+    }
+}

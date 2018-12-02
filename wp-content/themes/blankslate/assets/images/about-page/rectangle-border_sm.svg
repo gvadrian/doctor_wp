@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="290px" height="136px" viewBox="0 0 290 136" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,0 L290,0 L290,136 L0,136 L0,0 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="290" height="136" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="6">
+        <g id="About_Mobile" transform="translate(-14.000000, -842.000000)" fill="#FFFFFF" fill-rule="nonzero" stroke="#243249" stroke-width="2">
+            <g id="stats" transform="translate(3.000000, 686.000000)">
+                <g id="years" transform="translate(11.000000, 156.000000)">
+                    <use id="Rectangle-2" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,6 +1,5 @@
-<?php global $base, $current_lang_url;?>
-
 <?php
+global $base, $current_lang_url;
 $langs = array('ru', 'en', 'uk');
 if (strpos($_SERVER['REQUEST_URI'],'/en/') !== false) $current_lang = 'en'; else
     if (strpos($_SERVER['REQUEST_URI'],'/uk/') !== false) $current_lang = 'uk';
@@ -15,10 +14,7 @@ if ($current_lang) {
 }
 $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $current_lang : 'ru';
 ?>
-<!doctype html>
 <html <?php language_attributes();?>>
-<html lang="ua">
-
 <head>
     <meta charset="utf-8">
     <title><?php wp_title();?></title>
@@ -26,8 +22,8 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <?php wp_head();?>
     <meta name="theme-color" content="#000">
+    <?php wp_head() ?>
 </head>
 
 <body class="scroll-blocker">
@@ -141,7 +137,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                 <a href="" data-lang="en" class="header__lang-link">eng</a>
             </div>
             <div class="header__phone">
-                <a class="header__phone-link" href="tel:+38 (044) 483 21 78">
+                <a class="header__phone-link" href="tel:<?=$base['header_phones'][0]['phone']?>">
                     <?=$base['header_phones'][0]['phone']?>
                 </a>
             </div>
@@ -264,12 +260,12 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
             </ul>
         </nav>
         <div class="mobile-menu__phone">
-            <a class="mobile-menu__phone-link" href="tel:+38 (044) 483 21 78">
-                +38 (044) 483 21 78
+            <a class="mobile-menu__phone-link" href="tel:<?=$base['header_phones'][0]['phone']?>">
+                <?=$base['header_phones'][0]['phone']?>
             </a>
         </div>
         <div class="mobile-menu__socials">
-            <a href="https://www.youtube.com/channel/UCsnaPSTBVu5UNOn-Lu5Dojw" target="_blank" class="mobile-menu__social-link">
+            <a href="<?=$base['youtube']?>" target="_blank" class="mobile-menu__social-link">
                 <div class="mobile-menu__social-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="9" viewBox="0 0 12 9">
                         <defs>
@@ -284,7 +280,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                     </svg>
                 </div>
             </a>
-            <a href="https://www.facebook.com/pavel.denishuk" target="_blank" class="mobile-menu__social-link">
+            <a href="<?=$base['facebook']?>" target="_blank" class="mobile-menu__social-link">
                 <div class="mobile-menu__social-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7" height="13" viewBox="0 0 7 13">
                         <defs>
@@ -299,7 +295,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                     </svg>
                 </div>
             </a>
-            <a href="https://www.instagram.com/anacosmo_clinic/" target="_blank" class="mobile-menu__social-link">
+            <a href="<?=$base['instagram']?>" target="_blank" class="mobile-menu__social-link">
                 <div class="mobile-menu__social-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="13" viewBox="0 0 13 13">
                         <defs>
@@ -319,7 +315,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                     </svg>
                 </div>
             </a>
-            <a href="https://uk.wikipedia.org/wiki/Денищук_Павло_Андрійович" target="_blank" class="mobile-menu__social-link">
+            <a href="<?=$base['wiki']?>" target="_blank" class="mobile-menu__social-link">
                 <div class="mobile-menu__social-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="9" viewBox="0 0 13 9">
                         <defs>
@@ -334,7 +330,7 @@ $logo_lang = (!empty($current_lang) && in_array($current_lang,$langs)) ? $curren
                     </svg>
                 </div>
             </a>
-            <a href="https://t.me/ drden_plastic" target="_blank" class="mobile-menu__social-link">
+            <a href="<?=$base['telegram']?>" target="_blank" class="mobile-menu__social-link">
                 <div class="mobile-menu__social-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="11" viewBox="0 0 12 11">
                         <defs>

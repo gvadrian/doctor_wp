@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>paly</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main_Mobile" transform="translate(-130.000000, -595.000000)" fill-rule="nonzero">
+            <g id="about" transform="translate(0.000000, 480.000000)">
+                <g id="paly" transform="translate(130.000000, 115.000000)">
+                    <circle id="Oval-2" fill="#243249" opacity="0.604296875" cx="30" cy="30" r="30"></circle>
+                    <g id="play-button-(2)" transform="translate(12.000000, 12.000000)" fill="#FFFFFF" opacity="0.803236607">
+                        <path d="M25.2146939,17.3681633 L15.2889796,10.5795918 C14.9804082,10.3518367 14.157551,10.3518367 14.0914286,11.2114286 L14.0914286,24.7885714 C14.164898,25.6481633 15.002449,25.6628571 15.2889796,25.4204082 L25.2146939,18.6318367 C25.4718367,18.477551 25.8244898,17.8457143 25.2146939,17.3681633 Z M15.6269388,23.3412245 L15.6269388,12.6587755 L23.4220408,18 L15.6269388,23.3412245 Z" id="Shape"></path>
+                        <path d="M18,0 C8.07428571,0 0,8.07428571 0,18 C0,27.9257143 8.07428571,36 18,36 C27.9257143,36 36,27.9257143 36,18 C36,8.07428571 27.9257143,0 18,0 Z M18,34.4644898 C8.91918367,34.4644898 1.5355102,27.0808163 1.5355102,18 C1.5355102,8.91918367 8.91918367,1.5355102 18,1.5355102 C27.0808163,1.5355102 34.4644898,8.91918367 34.4644898,18 C34.4644898,27.0808163 27.0808163,34.4644898 18,34.4644898 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

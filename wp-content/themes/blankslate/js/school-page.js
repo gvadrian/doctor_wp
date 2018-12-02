@@ -19,7 +19,7 @@
           dragable: true
         }
       }, {
-        breakpoint: 768,
+        breakpoint: 767,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -155,19 +155,20 @@
       dragable: false
     };
     var icampsSlider = $('.icamps-photos__slider');
-    var icampsMobSlider = $('#icampsMobSlider');
-    var icampsDeskSlider = $('#icampsDeskSlider');
+    var previewSchool = $('.icamps-photos__slide');
+    var icampsMobSlider = $('#schoolMobSlider');
+    var icampsDeskSlider = $('#schoolDeskSlider');
 
     function addSlideDesk(slides) {
       var chunkedSlides = chunkArray(slides, 4);
       chunkedSlides.forEach(function (slide) {
-        icampsSlider.slick('slickAdd', "<div>\n                <div style=\"display: flex\">\n                    <div class=\"icamps-photos__slide\">\n                        <a class=\"icamps-photos__slide-img\" style=\"background-image: url('".concat(slide[0].preview, "')\">\n                        </a>\n                    </div>\n                    <div class=\"icamps-photos__slide\">\n                        <a class=\"icamps-photos__slide-img\" style=\"background-image: url('").concat(slide[1] ? slide[1].preview : '', "')\">\n                        </a>\n                    </div>\n                </div>\n                <div style=\"display: flex\">\n                    <div class=\"icamps-photos__slide\">\n                        <a class=\"icamps-photos__slide-img\" style=\"background-image: url('").concat(slide[2] ? slide[2].preview : '', "')\">\n                        </a>\n                    </div>\n                    <div class=\"icamps-photos__slide\">\n                        <a class=\"icamps-photos__slide-img\" style=\"background-image: url('").concat(slide[3] ? slide[3].preview : '', "')\">\n                        </a>\n                    </div>\n                </div>\n            </div>"));
+        icampsSlider.slick('slickAdd', "<div>\n                <div style=\"display: flex\">\n                    <div class=\"icamps-photos__slide\">\n                        <a href=\"".concat(slide[0].preview, "\" class=\"icamps-photos__slide-img\" style=\"background-image: url('").concat(slide[0].preview, "')\">\n                        </a>\n                    </div>\n                    <div class=\"icamps-photos__slide\">\n                        <a href=\"'").concat(slide[1] ? slide[1].preview : '', "\" class=\"icamps-photos__slide-img\" style=\"background-image: url('").concat(slide[1] ? slide[1].preview : '', "')\">\n                        </a>\n                    </div>\n                </div>\n                <div style=\"display: flex\">\n                    <div class=\"icamps-photos__slide\">\n                        <a  href=\"").concat(slide[2] ? slide[2].preview : '', "\" class=\"icamps-photos__slide-img\" style=\"background-image: url('").concat(slide[2] ? slide[2].preview : '', "')\">\n                        </a>\n                    </div>\n                    <div class=\"icamps-photos__slide\">\n                        <a href=\"").concat(slide[3] ? slide[3].preview : '', "\" class=\"icamps-photos__slide-img\" style=\"background-image: url('").concat(slide[3] ? slide[3].preview : '', "')\">\n                        </a>\n                    </div>\n                </div>\n            </div>"));
       });
     }
 
     function addSlideMob(slides) {
       slides.forEach(function (slide) {
-        icampsSlider.slick('slickAdd', "<div>\n                <div class=\"icamps-photos__slide\">\n                    <a class=\"icamps-photos__slide-img\" style=\"background-image: url('".concat(slide.preview, "')\">\n                    </a>\n                </div>\n            </div>"));
+        icampsSlider.slick('slickAdd', "<div>\n                <div class=\"icamps-photos__slide\">\n                    <a href=\"".concat(slide[0].preview, "\" class=\"icamps-photos__slide-img\" style=\"background-image: url('").concat(slide.preview, "')\">\n                    </a>\n                </div>\n            </div>"));
       });
     }
 
@@ -189,11 +190,17 @@
     }
 
     if (icampsSlider.length) {
+      // $('.icamps-photos__slider').slickLightbox({
+      //     itemSelector: 'a[href]'
+      // });
       var wViewport = getViewport();
 
       if (wViewport[0] > 1200) {
         icampsSlider.slick(icampsDeskSliderSettings);
-        addSlideDesk(icampsPhotoGallery[0]);
+        icampsSlider.slickLightbox({
+          itemSelector: 'a[href]'
+        }); // addSlideDesk(icampsPhotoGallery[0]);
+
         $('.icamps-photos__link').click(function () {
           $('.icamps-photos__tab').removeClass('active');
           $(this).parent().addClass('active');
@@ -209,12 +216,18 @@
           icampsSlider.empty();
           icampsSlider.slick(icampsDeskSliderSettings);
           addSlideDesk(icampsPhotoGallery[targetSlideIndex]);
+          icampsSlider.slickLightbox({
+            itemSelector: 'a[href]'
+          });
         });
       }
 
       if (wViewport[0] >= 1 && wViewport[0] < 1200) {
         icampsSlider.slick(icampsMobSliderSettings);
-        addSlideMob(icampsPhotoGallery[0]);
+        icampsSlider.slickLightbox({
+          itemSelector: 'a[href]'
+        }); // addSlideMob(icampsPhotoGallery[0]);
+
         $('.icamps-photos__link').click(function () {
           $('.icamps-photos__tab').removeClass('active');
           $(this).parent().addClass('active');
@@ -230,6 +243,9 @@
           icampsSlider.empty();
           icampsSlider.slick(icampsMobSliderSettings);
           addSlideMob(icampsPhotoGallery[targetSlideIndex]);
+          icampsSlider.slickLightbox({
+            itemSelector: 'a[href]'
+          });
         });
       }
     }
@@ -327,4 +343,11 @@
       });
     });
   });
+  /* Youtube Popup */
+  // $(function () {
+  //     var youtubePlayers = $(".inlinePlayButton");
+  //     if (youtubePlayers.length) {
+  //         youtubePlayers.YouTubePopUp({ autoplay: 0 });
+  //     }
+  // });
 })();

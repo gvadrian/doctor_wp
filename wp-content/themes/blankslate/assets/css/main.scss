@@ -1,0 +1,41 @@
+@import "global/_variables";
+@import "global/_base";
+@import "global/_fonts";
+@import "global/_links";
+@import "global/_inputs";
+@import "global/_buttons";
+@import "global/_animations";
+
+@import "components/header.scss";
+@import "components/footer.scss";
+@import "components/pointer.scss";
+@import "components/lines.scss";
+@import "components/results-slider.scss";
+@import "components/preloader.scss";
+
+/* custom library styles */
+@import "slick-lightbox-custom";
+@import "youtube-popup-custom";
+
+
+@import "main-page";
+@import "about-page";
+@import "procedure-page";
+@import "request-consultation-popup";
+@import "patient-stories";
+@import "news-page";
+@import "news-page-about";
+@import "before-after-page";
+@import "school-page";
+@import "contacts";
+@import "book-author";
+@import "recommends-page";
+@import "buy-book-popup";
+@import "icamps-page";
+@import "courses-main";
+
+
+
+
+
+

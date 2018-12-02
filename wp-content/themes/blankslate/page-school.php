@@ -8,7 +8,7 @@ get_header();?>
 <main>
     <section class="main-head__school main-head">
         <div class="school-head__wrap main-head__wrap">
-            <div class="school-head__bg main-head__bg main-head__img" style="background-image: url('./dist/images/school_page/school_img_1.png');">
+            <div class="school-head__bg main-head__bg main-head__img" style="background-image: url('<?=get_template_directory_uri()?>/images/school_page/school_img_1.png');">
                 <div class="main-head__mask"></div>
             </div>
             <div class="school-head__text-wrap main-head__text-wrap">
@@ -559,12 +559,12 @@ get_header();?>
                         <div class="internship__inner">
                             <div class="internship__img surgery-results__item">
 
-                                <a href="./courses.html" style="background-image: url('./dist/images/school_page/6.png')" class="surgery-projects__gallery-link internship__img-link">
+                                <a href="./courses.html" style="background-image: url('<?=get_template_directory_uri()?>/images/school_page/6.png')" class="surgery-projects__gallery-link internship__img-link">
                                     <div class="surgery-projects__gallery-text internship__img-text">Месячная стажировка
                                     </div>
                                 </a>
 
-                                <a href="./courses.html" style="background-image: url('./dist/images/school_page/clean-close-up-flat-lay-1092367.png')" class="surgery-projects__gallery-link internship__img-link">
+                                <a href="./courses.html" style="background-image: url('<?=get_template_directory_uri()?>/images/school_page/clean-close-up-flat-lay-1092367.png')" class="surgery-projects__gallery-link internship__img-link">
                                     <div class="surgery-projects__gallery-text internship__img-text">Стажировка пооперационно
                                     </div>
                                 </a>

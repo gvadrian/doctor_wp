@@ -1,6 +1,47 @@
 "use strict";
 
 (function ($) {
+  /* Preoader */
+  $(window).on('load', function () {
+    $('.preloader-bg').fadeOut('slow', function () {
+      $('body').removeClass('scroll-blocker');
+      $(this).remove();
+    });
+    /* Youtube Play button on click - add scroll blocker to body */
+
+    $(".inlinePlayButton, .news-about__player-poster-ren").on('click', function () {
+      $('body').addClass('scroll-blocker');
+      console.log('body lock on');
+    });
+    /* YoutubePopup on close - add scroll blocker to body */
+
+    $(document).on('click', '.YouTubePopUp-Wrap, .YouTubePopUp-Close', function () {
+      $('body').removeClass('scroll-blocker');
+      console.log('body lock off click');
+    });
+  });
+  /* YoutubePopup Initialization */
+
+  $(function () {
+    var youtubePlayers = $(".inlinePlayButton:not(.headerVideoPlayButton)");
+
+    if (youtubePlayers.length) {
+      youtubePlayers.YouTubePopUp({
+        autoplay: 0
+      });
+    }
+  });
+  /* YoutubePopup close on Esc */
+
+  $(document).keyup(function (e) {
+    if (e.keyCode == 27) {
+      $('.YouTubePopUp-Wrap, .YouTubePopUp-Close').click();
+      /* remove scroll blocker to body */
+
+      $('body').removeClass('scroll-blocker');
+      console.log('body lock off esc');
+    }
+  });
   $(document).ready(function () {
     //mobile menu
     var openMobileMenu = false;
@@ -81,28 +122,6 @@
         tbMenuOpen = false;
       }
     });
-    var surgeryResultsSlider = $('.surgery-results__slider');
-
-    if (surgeryResultsSlider.length) {
-      surgeryResultsSlider.slick({
-        dots: true,
-        arrows: true,
-        vertical: true,
-        dragable: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
-        responsive: [{
-          breakpoint: 1199,
-          settings: {
-            arrows: false,
-            swipe: true,
-            vertical: false
-          }
-        }]
-      });
-    }
 
     function getViewport() {
       var viewPortWidth;
@@ -130,11 +149,16 @@
       escape: true,
       blur: true
     });
+    var popupclosed = true;
     $(".request-button").on("click", function () {
       $('.request-consultation__popup').popup('show');
     });
     $(".footer__request-link").on("click", function () {
       $('.request-consultation__popup').popup('show');
+    }); // // popup close on overlay click
+
+    $(".popup__close-icon").on("click", function () {
+      $('.request-consultation__popup').popup('hide');
     });
     $(".popup__close-icon").on("click", function () {
       $('.request-consultation__popup').popup('hide');
@@ -147,32 +171,13 @@
       scrolllock: true,
       escape: true,
       blur: true
+    }); // // popup close on overlay click
+
+    $(".popup__close-icon").on("click", function () {
+      $('.buy-book__popup').popup('hide');
     });
     $(".book__more").on("click", function () {
       $('.buy-book__popup').popup('show');
-      console.log('test');
-    });
-    /* Youtube Popup */
-
-    $(function () {
-      var youtubePlayers = $(".inlinePlayButton");
-
-      if (youtubePlayers.length) {
-        youtubePlayers.YouTubePopUp({
-          autoplay: 0
-        });
-      }
-    });
-    /* Youtube Popup for NewAbout Page */
-
-    $(function () {
-      var youtubePlayers = $(".news-about__player-poster-ren");
-
-      if (youtubePlayers.length) {
-        youtubePlayers.YouTubePopUp({
-          autoplay: 0
-        });
-      }
     });
   });
 })(jQuery);

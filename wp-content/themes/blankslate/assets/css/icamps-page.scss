@@ -1,0 +1,759 @@
+.icamps-page {
+    &__wrap {
+        position: relative;
+        margin-top: 6rem;
+    }
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.icamps-head {
+    &__wrap {
+        position: relative;
+        height: calc(100vh - 6rem);
+    }
+    &__img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: calc(100% - 8.6rem);
+        position: relative;
+        z-index: 2;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: $main-img-grad;
+        }
+    }
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-image: $section-bg-grad;
+    }
+    &__h2 {
+        font-family: $regular;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 32px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: $white-1;
+        padding-top: 2.7rem;
+        padding-bottom: 2.7rem;
+    }
+}
+
+.icamps-congress {
+    &__wrap {
+        position: relative;
+        padding: 4.2rem 1.5rem 0 1.5rem;
+    }
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+    &__lines {
+        top: 0;
+        left: 0;
+    }
+    &__header {
+        position: relative;
+    }
+    &__h2 {
+        color: $header-color;
+        font-family: $regular;
+        letter-spacing: 0.5px;
+        font-weight: 400;
+        line-height: 28px;
+        font-size: 1.8rem;
+        padding-left: 3.3rem;
+        text-transform: uppercase;
+        max-width: 25rem;
+    }
+    &__pointer.pointer__wrap {
+        left: 0;
+    }
+}
+
+.icamps-upcoming {
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 2.2rem;
+    }
+    &__img {
+        width: 100%;
+        height: 106.875vw;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: $main-img-grad;
+        }
+    }
+    &__header {
+        padding-top: 2.5rem;
+        padding-bottom: 2rem;
+    }
+    &__h3 {
+        color: $dark-blue-1;
+        font-family: $regular;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 2.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.33px;
+    }
+    &__date-published {
+        color: $p-color-08;
+        font-family: $regular;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.33px;
+        width: 100%;
+        padding-bottom: 1.5rem;
+    }
+    &__description {
+        padding-bottom: 3rem;
+    }
+    &__more-btn {
+        min-width: 23rem;
+    }
+}
+
+.icamps-past {
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 5rem;
+        padding-bottom: 10rem;
+    }
+    &__img {
+        width: 100%;
+        height: 106.875vw;
+        position: relative;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image: $main-img-grad;
+        }
+    }
+    &__header {
+        padding-top: 2.5rem;
+        padding-bottom: 2rem;
+    }
+    &__h3 {
+        color: $dark-blue-1;
+        font-family: $regular;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 2.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.33px;
+    }
+}
+
+.icamps-photos {
+
+    &__wrap {
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+    }
+    &__wrap-tabs {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding-bottom: 2rem;
+    }
+
+    &__tab {
+        font-family: $regular;
+        color: $links-video;
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: 0.39px;
+        width: 100%;
+        position: relative;
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem;
+    }
+    &__tab.active {
+        font-family: $medium;
+        color: $dark-blue-1;
+        font-size: 1.4rem;
+        font-weight: 500;
+        letter-spacing: 0.39px;
+        padding-left: 2.8rem;
+        .icamps-photos__pointer {
+            display: flex;
+        }
+    }
+    &__pointer {
+        left: 0;
+        display: none;
+    }
+    &__square {
+        &::before {
+            content: none;
+        }
+    }
+
+    /* Slider styles */
+
+    &__wrap-gallery {
+        width: 100%;
+        position: relative;
+
+        #icampsDeskSlider{
+            display: none;
+        }
+
+        #icampsMobSlider{
+            display: flex;
+        }
+
+        // .slick-slide{
+        //     height: auto;
+        // }
+
+        .slick-dots {
+            height: 1.2rem;
+            top: auto;
+            right: 50%;
+            z-index: 1;
+            transform: translateX(50%);
+            display: flex;
+            justify-content: center;
+            bottom: 2.5rem;
+            position: absolute;
+            align-items: center;
+            li {
+                margin: 0 0.45rem;
+                list-style: none;
+                height: 0.8rem;
+                &.slick-active {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    background-color: $dark-blue-08;
+                }
+            }
+            [type='button'] {
+                outline: none;
+                width: 0.8rem;
+                height: 0.8rem;
+                border: none;
+                background-color: $dark-blue-04;
+                overflow: hidden;
+                color: transparent;
+            }
+            [type='button']:hover {
+                cursor: pointer;
+            }
+        }
+
+        button {
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            &.slick-prev.slick-arrow {
+                cursor: pointer;
+                background-image: url('../images/icamps/arrow-horiz_left-dark-sm.svg');
+                background-repeat: no-repeat;
+                width: 6rem;
+                height: 6rem;
+                transition: background-image 0.5s ease-in-out;
+                background-color: none;
+                background-repeat: no-repeat;
+                background-position: center;
+                transform: none;
+                left: 0;
+                position: absolute;
+                bottom: 0;
+                color: transparent;
+            }
+            &.slick-next.slick-arrow {
+                cursor: pointer;
+                background-image: url('../images/icamps/arrow-horiz_right-dark-sm.svg');
+                background-repeat: no-repeat;
+                width: 6rem;
+                height: 6rem;
+                transition: background-image 0.5s ease-in-out;
+                background-color: none;
+                background-repeat: no-repeat;
+                background-position: center;
+                transform: none;
+                right: 0;
+                position: absolute;
+                bottom: 0;
+                color: transparent;
+            }
+        }
+    }
+
+    &__slider{
+        display: flex;
+        padding-bottom: 7.5rem;
+        position: relative;
+
+        .slick-list, .slick-track{
+            width: 100%;
+        }
+    }
+
+    &__slide{
+        width: 100%;
+        height: 75.625vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &-img{
+            display: flex;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+}
+
+.icamps-reviews{
+    &__wrap{
+        .recommends-page__wrap.main-page__section-gap .request-block{
+            bottom: -9rem;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .icamps-page {
+        &__wrap {
+            margin-top: 13rem;
+        }
+        &__content {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+    }
+    .icamps-head {
+        &__wrap {
+            height: calc(100vh - 13rem);
+        }
+        &__img {
+            height: calc(100% - 14.8rem);
+        }
+        &__h2 {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            font-size: 2rem;
+            letter-spacing: 0.56px;
+            line-height: 28px;
+        }
+    }
+    .icamps-congress {
+        &__wrap {
+            padding: 7.5rem 2.5rem 0;
+        }
+        &__h2 {
+            font-size: 2rem;
+            letter-spacing: 0.56px;
+            line-height: 28px;
+            padding-left: 6rem;
+        }
+        &__pointer.pointer__wrap {
+            left: 2rem;
+        }
+    }
+    .icamps-upcoming {
+        &__wrap {
+            padding-top: 6.8rem;
+            flex-wrap: nowrap;
+        }
+        &__img {
+            height: 44.53vw;
+            flex: 0 0 33.85vw;
+        }
+        &__wrap-info {
+            padding-left: 4.8rem;
+        }
+        &__header {
+            padding-top: 0;
+            padding-bottom: 3rem;
+        }
+        &__h3 {
+            font-size: 1.4rem;
+            line-height: 2.8rem;
+            letter-spacing: 0.39px;
+        }
+        &__more {
+            justify-content: flex-start;
+        }
+    }
+    .icamps-past {
+        &__wrap {
+            padding-top: 6.8rem;
+            flex-wrap: nowrap;
+        }
+        &__img {
+            height: 44.53vw;
+            flex: 0 0 33.85vw;
+            order: 2;
+        }
+        &__wrap-info {
+            padding-right: 4.8rem;
+            order: 1;
+        }
+        &__header {
+            padding-top: 0;
+            padding-bottom: 3rem;
+        }
+        &__h3 {
+            font-size: 1.4rem;
+            line-height: 2.8rem;
+            letter-spacing: 0.39px;
+        }
+    }
+
+    .icamps-photos{
+
+        &__wrap{
+            padding-bottom: 0;
+        }
+        
+        &__wrap-tabs{
+            flex-direction: row;
+        }
+
+        &__tab{
+            width: 50%;
+            cursor: pointer;
+
+            &:hover{
+                font-family: $medium;
+                color: $dark-blue-1;
+            }
+        }
+
+        &__wrap-gallery{
+            
+            .nav-arrows {
+                height: 9rem;
+            }
+            button {
+                background: none;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                &.slick-prev.slick-arrow {
+                    background-image: url('../images/icamps/arrow-horiz_left-dark-lg.svg');
+                    width: 10rem;
+                    height: 6rem;
+                    left: 1.25rem;
+                    bottom: 1.5rem;
+                }
+                &.slick-next.slick-arrow {
+                    background-image: url('../images/icamps/arrow-horiz_right-dark-lg.svg');
+                    width: 10rem;
+                    height: 6rem;
+                    right: 1.25rem;
+                    bottom: 1.5rem;
+                }
+            }
+        }
+
+        &__slider{
+            margin:0 -1.25rem;
+            padding-bottom: 9rem;
+
+            .slick-dots{
+                bottom: 4rem;
+                li {
+                    margin: 0 1rem;
+                }
+            }
+
+            &.slick-initialized .slick-slide{
+                margin-right: 1.25rem;
+                margin-left: 1.25rem;
+                height: 37.36vw;
+            }
+    
+            .slick-list, .slick-track{
+                width: 100%;
+            }
+        }
+
+        &__slide{
+            height: auto;
+        }
+    }
+
+    .icamps-reviews{
+        &__wrap{
+            
+            .recommends-page__wrap.main-page__section-gap .request-block{
+                bottom: -9rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .icamps-page {
+        &__content {
+            max-width: 1106px;
+            margin: 0 auto;
+        }
+        &__wrap {
+            margin-top: 11rem;
+        }
+    }
+    .icamps-head {
+        &__wrap {
+            overflow: hidden;
+            height: calc(100% - 11rem);
+        }
+        &__img {
+            height: 100%;
+        }
+        &__header {
+            justify-content: flex-end;
+            position: absolute;
+            z-index: 4;
+            bottom: 8.8rem;
+            right: 68.85%;
+            width: 33%;
+            &::before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 15rem;
+                position: absolute;
+                z-index: 3;
+                background-image: linear-gradient(225deg, rgba(77, 94, 114, 0.4) 0%, $dark-blue-04 100%);
+                top: -5rem;
+                left: 6rem;
+            }
+        }
+        &__h2 {
+            padding: 4.5rem 6.5rem 4.5rem 0;
+            font-size: 2.4rem;
+            line-height: 40px;
+            letter-spacing: 0.67px;
+        }
+    }
+    .icamps-congress {
+        &__wrap {
+            padding: 12rem 0 0 0;
+        }
+        &__lines {
+            left: 50%;
+        }
+        &__content {
+            max-width: 1106px;
+            margin: 0 auto;
+        }
+        &__h2 {
+            padding-left: 2rem;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            line-height: 28px;
+            padding-left: 3.3rem;
+            font-size: 2.4rem;
+            text-transform: uppercase;
+        }
+        &__pointer.pointer__wrap {
+            left: 0;
+        }
+    }
+    .icamps-upcoming {
+        &__wrap {
+            padding-top: 8rem;
+        }
+        &__img {
+            height: 50rem;
+            flex: 0 0 38rem;
+        }
+        &__wrap-info {
+            padding-left: 6.2rem;
+        }
+        &__header {
+            padding-top: 3rem;
+            padding-bottom: 4.5rem;
+        }
+        &__h3 {
+            font-size: 1.8rem;
+            line-height: 3.4rem;
+            letter-spacing: 0.5px;
+        }
+        &__date-published {
+            font-size: 1.4rem;
+            letter-spacing: 0.39px;
+        }
+        &__description {
+            padding-bottom: 4.5rem;
+        }
+        &__more {
+            cursor: pointer;
+        }
+    }
+    .icamps-past {
+        &__wrap {
+            padding-top: 9rem;
+            padding-bottom: 14.5rem;
+        }
+        &__img {
+            height: 50rem;
+            flex: 0 0 38rem;
+        }
+        &__wrap-info {
+            padding-right: 6.2rem;
+        }
+        &__header {
+            padding-top: 3rem;
+            padding-bottom: 4.5rem;
+        }
+        &__h3 {
+            font-size: 1.8rem;
+            line-height: 3.4rem;
+            letter-spacing: 0.5px;
+        }
+        &__description {
+            padding-bottom: 0;
+        }
+    }
+
+    .icamps-photos{
+
+        &__wrap{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__wrap-tabs{
+            padding-top: 2rem;
+            flex: 0 0 25.1rem;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        &__tab{
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        &__wrap-gallery{
+            max-width: 84.5rem;
+
+            #icampsMobSlider{
+                display: none;
+            }
+
+            #icampsDeskSlider{
+                display: flex;
+            }
+
+            .nav-arrows{
+                height: 14.6rem;
+                bottom: 2.6rem;
+            }
+
+            button {
+                &.slick-prev.slick-arrow {
+                    bottom: 4.2rem;
+                    left: 0;
+                    &:hover{
+                        background-image: url('../images/icamps/arrow-horiz-hov_left-dark-lg.svg');
+                    }
+                }
+                &.slick-next.slick-arrow {
+                    bottom: 4.2rem;
+                    right: 0;
+                    &:hover{
+                        background-image: url('../images/icamps/arrow-horiz-hov_right-dark-lg.svg');
+                    }
+                }
+            }
+        }
+
+        &__slider{
+            margin:0;
+            width: 100%;
+            padding-bottom: 14.6rem;
+            margin-bottom: 2.6rem;
+
+            &.slick-initialized .slick-slide{
+                margin-right: 0;
+                margin-left: 0;
+                height: 73.8rem;
+            }
+    
+            .slick-list, .slick-track{
+                width: 100%;
+            }
+
+            .slick-dots{
+                bottom: 6.6rem;
+            }
+        }
+
+        &__slide{
+            height: 34.5rem;
+            display: inline-block;
+
+            &:first-child{
+                margin-bottom: 2.8rem;
+                margin-right: 1.4rem;
+                width: calc(50% - 1.4rem) !important;
+            }
+
+            &:last-child{
+                position: relative;
+                top: 2rem;
+                margin-left: 1.4rem;
+                width: calc(50% - 1.4rem) !important;
+            }
+        }
+
+        // &__slide-img{
+        //     height: 34.5rem;
+        // }
+    }
+
+    .icamps-reviews{
+        &__wrap{
+            .recommends-page__wrap.main-page__section-gap .request-block{
+                bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,319 @@
+.contacts {
+    &__page {
+        width: 100%;
+        background-image: $section-contacts;
+    }
+    &__wrap {
+        margin-top: 6rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    &__header {
+        position: relative;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+        margin-left: -1.5rem;
+    }
+    &__h2 {
+        padding: 0 5.3rem;
+        font-family: $light;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 26px;
+        text-transform: uppercase;
+        letter-spacing: 0.33px;
+        color: $white-1;
+    }
+    &__pointer.pointer__wrap {
+        left: 1.5rem;
+    }
+    &__border-bottom {
+        border-bottom: 1px solid $white-02;
+    }
+    &__left {
+        display: flex;
+        flex-direction: column;
+        &-hours {
+            width: 100%;
+        }
+    }
+    &__address {
+        padding-bottom: 3rem;
+    }
+    &__street,
+    &__email,
+    &__tel,
+    &__timetable,
+    &__hour {
+        font-family: $regular;
+        color: $white-1;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.33px;
+        min-width: 7rem;
+    }
+    &__day{
+        font-family: $regular;
+        color: $white-1;
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.33px;
+        min-width: 2.5rem;
+
+        &:last-child{
+            min-width:2rem;
+        }
+    }
+    &__subheader {
+        font-family: $regular;
+        color: $white-08;
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.28px;
+        padding-top: 3rem;
+    }
+    &__timetable,
+    &__hour,
+    &__day,
+    &__tel,
+    &__email {
+        padding-top: 1.5rem;
+    }
+    &__days,
+    &__hours,
+    &__underl-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+    &__day,
+    &__tel,
+    &__timetable,
+    &__strett,
+    &__email,
+    &__subheader,
+    &__email-address {
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &__day.contacts__week{
+        width: 3.6rem;
+
+        &:last-child{
+            width: 2.5rem;
+        }
+    }
+    &__timetable {
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+        &-wrap {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 6rem;
+            max-width: 32rem;
+        }
+    }
+    &__underline {
+        border-bottom: 0.5px solid $white-1;
+        display: flex;
+        width: 100%;
+        padding-top: 2.5rem;
+        
+
+        &:last-child{
+            padding-top: 2.9rem;
+            width: calc(100% + 2rem);
+            position: relative;
+            right: 2rem;
+        }
+    }
+    &__underl-wrap {
+        width: 100%;
+        padding-right: 2px;
+    }
+
+    &__contacts{
+        display: flex;
+    }
+}
+
+#contacts__right{
+    overflow: hidden;
+    height: 93.75vw;
+    width: calc(100% + 3rem);
+    position: relative;
+    left: -1.5rem;
+
+    iframe{
+        height: 100%;
+        width: 100%;
+        border:0;
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(99%); /* Chrome 19+ & Safari 6+ */
+        -webkit-backface-visibility: hidden;  /* Fix for transition flickering */
+
+    }
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .contacts {
+        &__wrap {
+            margin-top: 13rem;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+        &__header{
+            margin-left: 0;
+        }
+        &__h2 {
+            padding-left: 6rem;
+            font-size: 2rem;
+            line-height: 28px;
+            letter-spacing: 0.39px;
+        }
+        &__pointer.pointer__wrap {
+            left: 2rem;
+        }
+        &__width {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__left-hours {
+            border-bottom: 1px solid transparent !important;
+        }
+        &__timetable {
+            padding-top: 6rem;
+            &-wrap {
+                padding-bottom: 3rem;
+                align-items: center;
+            }
+        }
+        &__underline {
+            padding-top: 2.3rem;
+
+            &:last-child{
+                padding-top: 2.8rem;
+            }
+        }
+        &__underl-wrap {
+            width: 100%;
+        }
+        &__tablet-left {
+            width: 40%;
+        }
+        &__day {
+            min-width: 3.6rem;
+            max-width: 3.6rem;
+        }
+
+        &__day.contacts__week{
+            width: 3.6rem;
+    
+            &:last-child{
+                width: 2rem;
+                max-width: 2rem;
+            }
+        }
+        &__tablet-right {
+            width: 40%;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        &__map{
+            height: 65.1vw;
+        }
+    }
+
+    #contacts__right{
+        height: 65.1vw;
+        overflow: hidden;
+        width: calc(100% + 5rem);
+        position: relative;
+        left: -2.5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .contacts {
+        &__page {
+            width: 100%;
+            position: relative;
+        }
+        &__wrap {
+            width: 1106px;
+            margin: 0 auto;
+            margin-top: 11rem;
+            padding-left: 0;
+            padding-right: 0;
+            display: flex;
+            position: relative;
+        }
+
+        &__width{
+            padding-right: 3.6rem;
+        }
+
+        &__map{
+            width: 50%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        &__header {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            width: 100%;
+            margin-top: 0;
+        }
+        &__h2 {
+            padding: 2rem;
+            font-size: 2.4rem;
+            max-width: 38rem;
+            position: relative;
+            letter-spacing: 0.5px;
+            padding-left: 3.3rem;
+        }
+        &__pointer.pointer__wrap {
+            left: 0;
+        }
+
+        &__width{
+            flex-direction: column;
+        }
+
+        &__left{
+            width: 50%; 
+        }
+
+        &__tablet-left, &__tablet-right{
+            width: 100%;
+        }
+
+        &__tablet-right{
+            padding-top:0;
+        }
+
+        &__underline{
+            padding-top: 2.3rem;
+
+            &:last-child{
+                padding-top: 2.8rem;
+            }
+            
+        }
+        
+    }
+
+    #contacts__right{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+    }
+}

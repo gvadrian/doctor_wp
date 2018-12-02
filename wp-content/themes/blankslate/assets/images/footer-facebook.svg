@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>003-facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.6">
+        <g id="Service_info_Mobile" transform="translate(-118.000000, -1865.000000)" fill="#243249" fill-rule="nonzero">
+            <g id="footer" transform="translate(0.000000, 1605.000000)">
+                <g id="Group-15" transform="translate(15.331823, 17.000000)">
+                    <g id="Group-14" transform="translate(66.000000, 243.000000)">
+                        <g id="003-facebook" transform="translate(36.000000, 0.000000)">
+                            <path d="M0.848956887,0 L0.848956887,14 L14.9658666,14 L14.9658666,0 L0.848956887,0 Z M10.1879597,3.85283077 L9.08454484,3.85283077 C8.86599646,3.85283077 8.64543138,4.07683077 8.64543138,4.24347692 L8.64543138,5.35929231 L10.1857879,5.35929231 C10.1237666,6.21489231 9.99643515,6.99729231 9.99643515,6.99729231 L8.63755073,6.99729231 L8.63755073,11.8461538 L6.61259638,11.8461538 L6.61259638,6.99676923 L5.62686376,6.99676923 L5.62686376,5.36510769 L6.61259638,5.36510769 L6.61259638,4.03107692 C6.61259638,3.78713846 6.56276834,2.15387692 8.68737877,2.15387692 L10.1879908,2.15387692 L10.1879908,3.85283077 L10.1879597,3.85283077 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

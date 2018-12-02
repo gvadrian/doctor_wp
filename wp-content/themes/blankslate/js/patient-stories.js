@@ -2,7 +2,7 @@
 
 (function () {
   $(document).ready(function () {
-    $('.doctor-reviews__slider').slick({
+    $('#doctorReviewsSlider').slick({
       dots: false,
       // centerMode: true,
       // fade: true,
@@ -34,7 +34,10 @@
         }
       }]
     });
-    $('.patient-smi__slider').slick({
+    $('#doctorReviewsSlider').slickLightbox({
+      itemSelector: 'a[href]'
+    });
+    $('#expertSmmSliderReviewsPage').slick({
       dots: false,
       arrows: true,
       dragable: false,
@@ -62,33 +65,7 @@
         }
       }]
     });
-    /* Patient reviews slider settings */
-
-    var galleryCollection = [{
-      preview: './dist/images/recommends-page/slider1/video-cover1.jpg',
-      link: 'https://www.youtube.com/watch?v=sL-tCCRU0Mk'
-    }, {
-      preview: './dist/images/recommends-page/slider1/video-cover2.jpg',
-      link: 'https://www.youtube.com/watch?v=IS7iW013dV8'
-    }, {
-      preview: './dist/images/recommends-page/slider1/video-cover3.jpg',
-      link: 'https://www.youtube.com/watch?v=59ZDzzioKKg'
-    }, {
-      preview: './dist/images/recommends-page/slider1/video-cover2.jpg',
-      link: 'https://www.youtube.com/watch?v=sL-tCCRU0Mk'
-    }, {
-      preview: './dist/images/recommends-page/slider2/video-cover1.jpg',
-      link: 'https://www.youtube.com/watch?v=tqxMQS2LLhQ'
-    }, {
-      preview: './dist/images/recommends-page/slider2/video-cover2.jpg',
-      link: 'https://www.youtube.com/watch?v=gVIdOSr2aGc'
-    }, {
-      preview: './dist/images/recommends-page/slider2/video-cover3.jpg',
-      link: 'https://www.youtube.com/watch?v=7e1bhU8L6gg'
-    }, {
-      preview: './dist/images/recommends-page/slider2/video-cover2.jpg',
-      link: 'https://www.youtube.com/watch?v=gVIdOSr2aGc'
-    }];
+    /* Patient stories slider settings */
     var galleryPreviewSettings = {
       rows: 0,
       slidesToShow: 2,
@@ -108,29 +85,32 @@
       useTransform: false,
       prevArrow: ".arrow-left",
       nextArrow: ".arrow-right",
-      fade: false,
+      fade: true,
       asNavFor: ".gallery",
       dots: true
     };
 
     function addSlide(slides) {
       slides.forEach(function (slide) {
-        $('#patient-stories__previews').slick('slickAdd', " <div>\n                <div class=\"recommends-slider__preview\" style=\"background-image: url('".concat(slide.preview, "')\">\n                    <svg class=\"\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\"\n                        y=\"0px\" width=\"38px\" height=\"40px\" viewBox=\"0 0 38 40\" enable-background=\"new 0 0 38 40\"\n                        xml:space=\"preserve\">\n                        <g transform=\"translate(0 .373)\">\n                            <ellipse opacity=\"0.604\" fill=\"#243249\" enable-background=\"new    \" cx=\"19\" cy=\"19.627\" rx=\"19\" ry=\"19.627\" />\n                            <g opacity=\"0.803\">\n                                <path fill=\"#FFFFFF\" d=\"M23.57,19.214l-6.287-4.441c-0.195-0.15-0.717-0.15-0.758,0.413v8.883\n                                            c0.046,0.562,0.577,0.572,0.758,0.413l6.286-4.441c0.228-0.164,0.281-0.482,0.117-0.71c-0.032-0.045-0.072-0.084-0.117-0.117\n                                            H23.57z M17.497,23.122v-6.989l4.937,3.494L17.497,23.122z\"\n                                />\n                                <path fill=\"#FFFFFF\" d=\"M19,7.851c-6.286,0-11.4,5.283-11.4,11.776c0,6.494,5.114,11.777,11.4,11.777s11.4-5.283,11.4-11.777\n                                            C30.4,13.134,25.286,7.851,19,7.851z M19,30.399c-5.751,0-10.428-4.83-10.428-10.772c0-5.94,4.677-10.771,10.428-10.771\n                                            s10.428,4.83,10.428,10.771C29.428,25.57,24.75,30.4,19,30.399L19,30.399z\"\n                                />\n                            </g>\n                        </g>\n                    </svg>\n                </div>\n            </div>"));
-        $('#patient-stories__videos').slick('slickAdd', "<div>\n        <div class=\"recommends-slider__item\" style=\"background-image: url('".concat(slide.preview, "')\">\n            <a class=\"inlinePlayButton\" href=\"").concat(slide.link, "\"></a>\n        </div>\n    </div>"));
+        $('#patientStoriesPreviews').slick('slickAdd', " <div>\n                <div class=\"recommends-slider__preview\" style=\"background-image: url('".concat(slide.preview, "')\">\n                    <svg class=\"\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\"\n                        y=\"0px\" width=\"38px\" height=\"40px\" viewBox=\"0 0 38 40\" enable-background=\"new 0 0 38 40\"\n                        xml:space=\"preserve\">\n                        <g transform=\"translate(0 .373)\">\n                            <ellipse opacity=\"0.604\" fill=\"#243249\" enable-background=\"new    \" cx=\"19\" cy=\"19.627\" rx=\"19\" ry=\"19.627\" />\n                            <g opacity=\"0.803\">\n                                <path fill=\"#FFFFFF\" d=\"M23.57,19.214l-6.287-4.441c-0.195-0.15-0.717-0.15-0.758,0.413v8.883\n                                            c0.046,0.562,0.577,0.572,0.758,0.413l6.286-4.441c0.228-0.164,0.281-0.482,0.117-0.71c-0.032-0.045-0.072-0.084-0.117-0.117\n                                            H23.57z M17.497,23.122v-6.989l4.937,3.494L17.497,23.122z\"\n                                />\n                                <path fill=\"#FFFFFF\" d=\"M19,7.851c-6.286,0-11.4,5.283-11.4,11.776c0,6.494,5.114,11.777,11.4,11.777s11.4-5.283,11.4-11.777\n                                            C30.4,13.134,25.286,7.851,19,7.851z M19,30.399c-5.751,0-10.428-4.83-10.428-10.772c0-5.94,4.677-10.771,10.428-10.771\n                                            s10.428,4.83,10.428,10.771C29.428,25.57,24.75,30.4,19,30.399L19,30.399z\"\n                                />\n                            </g>\n                        </g>\n                    </svg>\n                </div>\n            </div>"));
+        $('#patientStoriesVideos').slick('slickAdd', "<div>\n        <div class=\"recommends-slider__item\" style=\"background-image: url('".concat(slide.preview, "')\">\n            <a class=\"inlinePlayButton\" href=\"").concat(slide.link, "\"></a>\n        </div>\n    </div>"));
       });
     }
-    /* Patient reviews slider initialization */
+    /* Patient stories slider initialization */
 
 
     $(function () {
-      $('#patient-stories__previews').slick(galleryPreviewSettings);
-      $('#patient-stories__videos').slick(galleryVideoSettings);
+      $('#patientStoriesPreviews').slick(galleryPreviewSettings);
+      $('#patientStoriesVideos').slick(galleryVideoSettings);
       addSlide(galleryCollection);
       /* sync preview with video */
 
-      $("#patient-stories__previews .slick-slide").on("click", function () {
+      $("#patientStoriesPreviews .slick-slide").on("click", function () {
         var index = $(this).attr("data-slick-index");
-        $('#patient-stories__videos').slick("slickGoTo", index);
+        $('#patientStoriesVideos').slick("slickGoTo", index);
+      });
+      $(".inlinePlayButton").YouTubePopUp({
+        autoplay: 0
       });
     });
   });

@@ -21,21 +21,23 @@ function load_scripts()
 
     //styles
     wp_enqueue_style('slick-style', get_template_directory_uri() . '/libs/css/slick.min.css');
+    wp_enqueue_style('recommendations-slick-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css');
     wp_enqueue_style('main-style', get_template_directory_uri() . '/css/main.css');
 
     //specific scripts and styles for pages
     if (is_front_page())
-        wp_enqueue_script('main-page', get_template_directory_uri() . '/js/main-page.min.js', array(), false, true);
+        wp_enqueue_script('main-page', get_template_directory_uri() . '/js/main-page.js', array(), false, true);
     if (strpos($_SERVER['REQUEST_URI'], '/about/') !== false)
-        wp_enqueue_script('about-page', get_template_directory_uri() . '/js/about-page.min.js', array(), false, true);
-    if (strpos($_SERVER['REQUEST_URI'], '/before-after/') !== false)
+        wp_enqueue_script('about-page', get_template_directory_uri() . '/js/about-page.js', array(), false, true);
+    if (strpos($_SERVER['REQUEST_URI'], '/before-after/') !== false) {
         wp_enqueue_script('before-after-page', get_template_directory_uri() . '/js/before-after-page.min.js', array(), false, true);
+        wp_enqueue_script('before-after-single', get_template_directory_uri() . '/js/procedure-page.min.js', array(), false, true);
+    }
     if (strpos($_SERVER['REQUEST_URI'], '/recommendations/') !== false) {
-        wp_enqueue_script('recommendations-page', get_template_directory_uri() . '/js/recommends-page.min.js', array(), false, true);
-        wp_enqueue_style('recommendations-slick-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css');
+        wp_enqueue_script('recommendations-page', get_template_directory_uri() . '/js/recommends-page.js', array(), false, true);
     }
     if (strpos($_SERVER['REQUEST_URI'], '/reviews/') !== false)
-        wp_enqueue_script('reviews-page', get_template_directory_uri() . '/js/patient-stories.min.js', array(), false, true);
+        wp_enqueue_script('reviews-page', get_template_directory_uri() . '/js/patient-stories.js', array(), false, true);
     if (strpos($_SERVER['REQUEST_URI'], '/school/') !== false)
         wp_enqueue_script('school-page', get_template_directory_uri() . '/js/school-page.min.js', array(), false, true);
     if (strpos($_SERVER['REQUEST_URI'], '/icamps/') !== false)

@@ -1,0 +1,70 @@
+
+// colors
+$white-1: rgb(255, 255, 255); /* #ffffff */
+$white-08: rgba(255, 255, 255, 0.8); /* #ffffff opacity 0.8*/
+$white-06: rgba(255, 255, 255, 0.6); /* #ffffff opacity 0.6*/
+$white-04: rgba(255, 255, 255, 0.4); /* #ffffff opacity 0.4*/
+$white-02: rgba(255, 255, 255, 0.2); /* #ffffff opacity 0.2*/
+
+$dark-blue-1: rgb(36, 50, 73); /* #243249 */
+$dark-blue-08: rgba(36, 50, 73, 0.8); /* #243249 opacity 0.8*/
+$dark-blue-07: rgba(36, 50, 73, 0.7); /* #243249 opacity 0.7*/
+$dark-blue-06: rgba(36, 50, 73, 0.6); /* #243249 opacity 0.6*/
+$dark-blue-04: rgba(36, 50, 73, 0.4); /* #243249 opacity 0.4*/
+$dark-blue-02: rgba(36, 50, 73, 0.2); /* #243249 opacity 0.2*/
+
+$medium-blue-1: rgb(74, 97, 128); /* #4a6180 */
+$medium-blue-08: rgba(74, 97, 128, 0.8); /* #4a6180 opacity 0.8*/
+$medium-blue-06: rgba(74, 97, 128, 0.6); /* #4a6180 opacity 0.6*/
+$medium-blue-04: rgba(74, 97, 128, 0.4); /* #4a6180 opacity 0.4*/
+$medium-blue-01: rgba(74, 97, 128, 0.1); /* #4a6180 opacity 0.1*/
+
+
+$page-grid-1: rgb(216, 216, 216); /* #d8d8d8 */
+$page-grid-08: rgba(216, 216, 216, 0.8); /* #d8d8d8 opacity 0.8*/
+$page-grid-04: rgba(216, 216, 216, 0.4); /* #d8d8d8 opacity 0.4*/
+$page-grid-03: rgba(216, 216, 216, 0.3); /* #d8d8d8 opacity 0.3*/
+
+$p-color-1: rgb(86, 86, 86); /* #565656 */
+$p-color-08: rgba(86, 86, 86, 0.8); /* #565656 opacity 0.8*/
+$p-color-06: rgba(86, 86, 86, 0.6); /* #565656 opacity 0.6*/
+
+$scrollbar: calc(100vw - 100%);
+
+$header-color: rgb(37, 37, 37); /* #252525 */
+$links-video: rgba(37, 37, 37, 0.6); /* #252525 opacity 0.6*/
+$links-color: rgba(37, 37, 37, 0.4); /* #252525 opacity 0.4*/
+$sublinks-color: rgba(37, 37, 37, 0.3); /* #252525 opacity 0.3*/
+$slider-overlay: rgba(37, 37, 37, 0.2); /* #252525 opacity 0.2*/
+
+// gradients
+$date-grad: linear-gradient(225deg, rgb(74, 97, 128) 0%, $dark-blue-1 100%); /* #4a6180 to #243249 */
+$section-bg-grad: linear-gradient(225deg, rgb(77, 94, 114) 0%, $dark-blue-1 100%); /* #4d5e72 to #243249 */
+$section-contacts: linear-gradient(0deg, $dark-blue-1 0%, rgb(77, 94, 114) 100%); /* #243249 to #4d5e72 */
+
+$img-text-grad: linear-gradient(180deg, rgba(62, 81, 107, 0.8) 0%, $dark-blue-08 100%); /* #3e516b to #243249 opacity 0.8*/
+$video-overlay-grad: linear-gradient(180deg, $dark-blue-02 0%, rgba(0, 0, 0, 0.2) 100%); /* #243249 to #5676a7 opacity 0.2*/
+$main-img-grad: linear-gradient(180deg, $dark-blue-04 0%, rgba(86, 118, 167, 0.4) 100%); /* #243249 to #5676a7 opacity 0.4*/
+$small-img-grad:  linear-gradient(180deg, rgba(62, 81, 107, 0.6) 0%, $dark-blue-06 100%); /* #3e516b to #243249 opacity 0.6*/
+$video-preview: linear-gradient(180deg, $dark-blue-04 0%, rgba(0, 0, 0, 0.4) 100%); /* #243249 to #000000 opacity 0.4*/
+
+// typography
+
+$medium: 'firasans-medium', sans-serif;
+$regular: 'firasans-regular', sans-serif;
+$light: 'firasans-light', sans-serif;
+$lightitalic: 'firasans-lightitalic', sans-serif;
+
+
+// tabs variables and mixins
+
+// $color__main: #444;
+// $color__active: grey;
+// $background__active: #eee;
+$width__tabs-side: 150px;
+
+@mixin tab-active() {
+  background: $medium-blue-01;
+  color: $dark-blue-1;
+  font-family: $regular;
+}
